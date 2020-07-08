@@ -1,0 +1,73 @@
+<%- include("partials/header") %>
+ <link rel="stylesheet" type="text/css" href="stylesheets/registration.css">
+
+
+
+
+<div class="wrapper" style="margin: 60px auto;">
+		<div class="title">
+			<h1 class="h1-register">CREATE ACCOUNT</h1>
+		</div>
+
+        
+		
+
+
+           <form class="form-register" action="/register" method="post">
+
+           	   <div class="row">
+
+               
+            <% if(error && error.length > 0) { %>
+         <div class="errors">
+            <ul class="ul-register">
+                <li><%- error %> </li>
+            </ul>
+         </div>
+       <% } %>
+     
+     <% if(success && success.length > 0) { %>
+         <div class="success">
+            <ul class="ul-register">
+                <li><%= success %> </li>
+            </ul>
+         </div>
+       <% } %>
+     
+
+           	   	<div class="col-12 " style="margin-bottom: 8%;">
+	           <label class="label-register" for="name">First Name</label>
+               <input class="input-register" type="text" name="name" placeholder="">
+                </div>
+
+                <div class="col-12 " style="margin-bottom: 8%;">
+               <label class="label-register" for="surname">Second Name</label>
+               <input class="input-register" type="text" name="surname" placeholder="">
+                </div>
+
+               <div class="col-12 " style="margin-bottom: 8%;">
+               <label class="label-register" for="email">Email</label>
+               <input class="input-register" type="email" name="email" placeholder="">
+                </div>
+
+                <div class="col-12 " style="margin-bottom: 8%;">
+               <label class="label-register" for="password">Password</label>
+               <input class="input-register" type="password" name="password" placeholder="">
+                </div>
+
+                <div class="col-12 " style="margin-bottom: 8%;">
+               <label class="label-register" for="avatar">Avatar Url</label>
+               <input class="input-register" type="avatar" name="avatar" placeholder="">
+                </div>
+
+                <div class="col-12 " id="button">
+               <button class="button-register" type="submit"><p class="p-register">CREATE</p></button>
+                </div>
+                <div class="col-12 " style="margin-bottom: 8%;">
+                <h6><a class="a-register" href="/login">Log in</a></h6>
+            </div>
+               </div>
+           </form>
+           
+</div>
+<%- include("partials/footer") %>

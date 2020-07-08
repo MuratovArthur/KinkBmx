@@ -1,0 +1,125 @@
+header.faqs-page-header{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    min-height: 60px;
+    background: #1f1f1f;
+}
+h1.faqs-page-title{
+    margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 3.2em;
+    letter-spacing: 1.7px;
+    text-align: center;
+}
+.faqs-page {
+padding: 60px 15% 80px 15%;
+
+}
+div.faqs-page-content {
+    position: relative;
+    color: white;
+    font-weight: 200;
+    font-size: 17px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+div.faqs-page-content h5 { 
+font-family: 'Teko', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.2px;
+    margin-bottom: 0;
+    margin-top: 24px;
+}
+
+a.underline {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #836600;
+    opacity: 80%;
+    text-decoration: none;
+    color: white;
+}
+
+a.underline:hover {
+    text-decoration: none;
+
+}
+
+.web-store-policy-content ul {
+    padding-left: 29px;
+}
+
+header.web-store-policy-header{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    min-height: 60px;
+    background: #1f1f1f;
+}
+h1.web-store-policy-title{
+    margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 3.2em;
+    letter-spacing: 1.7px;
+    text-align: center;
+}
+.web-store-policy {
+padding: 60px 15% 80px 15%;
+
+}
+div.web-store-policy-content {
+    position: relative;
+    color: white;
+    font-weight: 200;
+    font-size: 17px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+div.web-store-policy-content h5 { 
+font-family: 'Teko', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.2px;
+    margin-bottom: 0;
+    margin-top: 24px;
+}
+
+
+@media screen and (max-width: 768px) { 
+
+    .faqs-page {
+padding: 7px 2% 40px 3%;
+
+}
+
+div.faqs-page-content {
+
+    font-size: 15px;
+
+}
+
+div.faqs-page-content h5 { 
+    font-size: 18px;
+
+}
+
+    .web-store-policy {
+padding: 7px 2% 40px 3%;
+
+}
+
+div.web-store-policy-content {
+
+    font-size: 15px;
+
+}
+
+div.web-store-policy-content h5 { 
+    font-size: 18px;
+
+}

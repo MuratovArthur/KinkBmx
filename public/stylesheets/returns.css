@@ -1,0 +1,224 @@
+.returns-page-header{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    min-height: 60px;
+    background: #1f1f1f;
+}
+.returns-page-title{
+	margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+.returns-page-content {
+    padding: 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Exo 2', sans-serif;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 15px;
+}
+.returns-page-content-li{
+     font-size: 13px;
+     margin-left: 30px; 
+     margin-top: 10px; 
+}
+.returns-page-content-p{
+    margin-left: 10%; 
+    font-size: 13px;
+    margin-bottom: 0; 
+}
+.returns-page-content-hr{
+    margin-top: 5%;
+    border-top: 1px solid #313131;
+}
+.returns-page-content-h6{
+    color: #daaa00;
+    text-transform: uppercase;
+    margin-bottom: 2%; 
+    margin-top: 2%; 
+}
+.returns-page-content-input{
+    width: 100%;
+    background: #000000;
+    border: 1px solid rgb(129, 129, 129);
+    height: 100%;
+    color: #ffffff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    padding: 6px;
+    padding-left: 10px;
+    outline: none;
+}
+
+.returns-page-content-input:hover{
+    border: 1px solid #ffffff;
+}
+.returns-page-content-input::placeholder{
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+}
+.returns-page-content-col-md-6{
+    margin: 10px 0;
+} 
+.returns-page-content-col-md-12{
+     margin-bottom: 20px;
+}
+.returns-page-content-textarea{
+    width: 100%;
+    background: #000000;
+    border: 1px solid rgb(129, 129, 129);
+    height: 100%;
+    color: #ffffff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    padding: 6px;
+    padding-left: 10px;
+    outline: none;
+}
+.returns-button{
+display: block;
+width: 140px;
+align-self: left;
+background: #000000;
+outline: none;
+border: 3px solid #dbaa0c;
+margin-top: 10px; 
+}
+.returns-button:focus{
+  outline: none;
+}
+.returns-button-text{
+  margin: 0; 
+  text-transform: uppercase;
+  padding: 5%; 
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+
+
+@media only screen and (min-width: 768px){
+.returns-page-content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.returns-page-content-li{
+     font-size: 16px;
+     margin-left: 40px; 
+}
+.returns-page-content {
+    font-size: 20px;
+}
+.returns-page-content-p{
+     font-size: 16px;
+}
+.returns-page-content-h6{
+    font-size: 20px;
+}
+.returns-page-content-col-md-12{
+    margin: 10px 0;
+}
+
+}
+
+@media only screen and (max-width: 768px){
+.returns-page-content-col-md-6{
+    margin: 2% 0;
+    padding: 0;
+    height: 30px;
+}
+.returns-page-content-col-md-12{
+      margin: 2% 0;
+    padding: 0;
+    height: 30px;
+}
+.returns-page-content-input{
+    font-size: 14px;
+}
+.returns-button-text{
+  margin: 0; 
+  text-transform: uppercase;
+  padding: 5%; 
+  font-size: 14px;
+  color: #ffffff;
+}
+.returns-button{
+width: 100px;
+
+}
+}
+
+
+
+.date-picker .dates {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: black;
+  color: white;
+   border: 2px solid #EEE;
+   font-weight: bold;
+}
+
+.date-picker .dates.active {
+  display: block;
+  width: 93.5%;
+  margin: 0 auto;
+}
+
+.date-picker .dates .month {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #EEE;
+}
+
+.date-picker .dates .month .arrows {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #dbaa0c;
+  font-size: 20px;
+}
+
+.date-picker .dates .month .arrows:hover {
+  user-select: none;
+}
+
+.date-picker .dates .month .arrows:active {
+  background-color: #dbaa0c;
+  color: black;
+}
+
+.date-picker .dates .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 200px;
+}
+.date-picker .dates .days .day { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 1px solid rgb(129, 129, 129);
+}
+.date-picker .dates .days .day.selected {
+  background-color: #dbaa0c;
+  color: black;
+}
+
+

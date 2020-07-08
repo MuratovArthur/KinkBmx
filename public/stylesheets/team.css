@@ -1,0 +1,114 @@
+.team-page-header{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    min-height: 60px;
+    background: #1f1f1f;
+}
+.team-page-title{
+	margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+.team-list-title{
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-align: center;
+    font-size: 2.5em; margin-top: 70px;
+}
+#team-page{
+	padding-bottom: 90px;
+}
+.team-member-img {
+  object-fit: cover;
+  max-width: 90%;
+  max-height: 650px;
+  overflow:hidden;
+  margin: 0 auto;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.team-member-img:hover{
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.carousel-inner{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 80px; 
+}
+.team-member-disc{
+    font-family: 'Exo 2', sans-serif;
+    color: #ffffff;
+    font-weight: 200;
+    max-width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 1.5em; 
+}
+.team-members-list-item{
+  font-family: 'Exo 2', sans-serif;
+    color: #ffffff;
+    font-weight: 200;
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 1.5rem;
+}
+.carousel.slide{
+	margin-top: 10%; 
+}
+.carousel-control-next{
+margin-right:  5%; 
+}
+.carousel-control-prev{
+margin-left: 5%; 
+}
+.team-page-links{
+	color: #daaa00;
+	text-decoration: none;
+}
+.team-member-links{
+  color: #ffffff;
+  text-decoration: none;
+}
+.team-member-links:hover{
+  color: #daaa00;
+  text-decoration: none;
+}
+.team-page-links:hover{
+	color: #daaa00;
+	text-decoration: none;
+}
+@media screen and (max-width: 769px) {
+ .team-member-img {
+  max-width: 100%;
+}
+.team-members-list-item{
+    font-size: 1.1rem;
+}
+.team-list-title{
+    font-size: 1.8em; margin-top: 50px;
+}
+}
+@media screen and (min-width: 769px) {
+
+.team-member-disc{
+    max-width: 40%;
+    font-size: 1.2rem;
+}
+
+}
+

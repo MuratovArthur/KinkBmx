@@ -1,0 +1,108 @@
+body{
+    background: black;
+}
+    .wrapper{
+        max-width: 450px;
+        width: 100%;
+        margin: 50px auto;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+        padding: 0px;
+            }     
+    .h1-register {
+    	font-family: 'Teko', sans-serif;
+    	font-size: 700;
+    	text-align: center; 
+    	color: #ffffff;
+    	font-size: 2.5em; 
+    	letter-spacing: 0.01em;
+        line-height: 1.2;
+        margin-bottom: 25px;
+        padding-top: 25px; 
+        }
+    .form-register{
+        width: 100%;
+    }    
+    .label-register{
+    	text-align: left;
+    	color: #ffffff;
+    	font-family: 'Exo 2', sans-serif;
+    	font-size: 0.8em;
+    	display: block;
+    } 
+    .row-two{
+    	margin: auto;
+    }   
+    .col-12{
+    	margin-bottom: 10%; 
+    }
+    .input-register{
+    	width: 100%;
+    	background: #000000;
+    	border: 1px solid rgb(129, 129, 129);
+    	height: 80%;
+         color: #ffffff;
+        font-family: 'Exo 2', sans-serif;
+        padding-left: 2%;
+    }
+    .input-register:focus{
+        border: 1px solid white;
+        outline: none;
+    }
+    .button-register{
+    	width: 100%;
+    	height: 100%;
+    	background: #000000;
+    	border: 2px solid rgb(218, 170, 0);
+        
+    }
+    #forgot{
+    	text-align: right; 
+    }
+    .button-register:focus{
+    	outline: none;
+    }
+    .p-register{
+    	color: #ffffff;
+    	padding-top: 2%;
+        padding-bottom: 2%;
+    	font-family: 'Josefin Sans', sans-serif;
+    	letter-spacing: 0.1em;
+    }
+    .a-register{
+    	color: #ffffff;
+    }
+    .a-register:hover{
+    	color: #ffffff;
+    	text-decoration: none;
+
+    }
+    h6{
+        text-align: center;
+        color: #ffffff;
+        font-family: 'Exo 2', sans-serif;
+    }
+    #button{
+        margin-bottom: 5%; 
+    }
+    .errors{
+        width: 93%;
+        color: #d02e2e;
+        background: #fff6f6;
+        font-family: 'Exo 2', sans-serif;
+        margin: 0 auto;
+        margin-bottom: 4%; 
+        border: 2px solid #d02e2e;
+    }
+    .success{
+        width: 93%;
+        color: #56ad6a;
+        background: #ecfef0;
+        font-family: 'Exo 2', sans-serif;
+        margin: 0 auto;
+        margin-bottom: 4%; 
+        border: 2px solid #56ad6a;
+    }
+    .ul-register{
+        margin: 2%;
+        padding-left: 5%;
+    }

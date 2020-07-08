@@ -1,0 +1,158 @@
+
+<%- include("partials/header") %>
+<style>
+    .wrapper{
+        max-width: 450px;
+        width: 100%;
+        margin: 100px auto;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+        padding: 0px;
+            }     
+    .h1-register {
+      font-family: 'Teko', sans-serif;
+      font-size: 700;
+      text-align: center; 
+      color: #ffffff;
+      font-size: 2.5em; 
+      letter-spacing: 0.01em;
+        line-height: 1.2;
+        padding-top: 25px; 
+        }
+    .title{
+         margin-bottom: 25px; 
+        }
+    .form-register{
+        width: 100%;
+    }    
+    .label-register{
+      text-align: left;
+      color: #ffffff;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 0.8em;
+      display: block;
+    } 
+    .row{
+      margin: auto;
+    }   
+    .col-12{
+      margin-bottom: 8%; 
+    }
+    .input-register{
+      width: 100%;
+      background: #000000;
+      border: 1px solid rgb(129, 129, 129);
+      height: 80%;
+         color: #ffffff;
+        font-family: 'Exo 2', sans-serif;
+        padding-left: 2%;
+    }
+    .input-register:focus{
+        border: 1px solid white;
+        outline: none;
+    }
+    .button-register{
+      width: 100%;
+      height: 80%;
+      background: #000000;
+      border: 2px solid rgb(218, 170, 0);
+    }
+    #forgot{
+      text-align: right; 
+    }
+    .button-register:focus{
+      outline: none;
+    }
+    .p-register{
+      color: #ffffff;
+      padding-top: 2%;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 0.1em;
+    }
+    .a-register{
+      color: #ffffff;
+    }
+    .a-register:hover{
+      color: #ffffff;
+      text-decoration: none;
+
+    }
+    h6{
+        text-align: center;
+        color: #ffffff;
+        font-family: 'Exo 2', sans-serif;
+    }
+    #button{
+        margin-bottom: 1%; 
+    }
+    .success{
+        width: 93%;
+        color: #56ad6a;
+        background: #ecfef0;
+        font-family: 'Exo 2', sans-serif;
+        margin: 0 auto;
+        margin-bottom: 4%; 
+        border: 1px solid #56ad6a;
+    }
+    .errors{
+        width: 93%;
+        color: #d02e2e;
+        background: #fff6f6;
+        font-family: 'Exo 2', sans-serif;
+        margin: 0 auto;
+        margin-bottom: 4%; 
+        border: 1px solid #d02e2e;
+    }
+   .ul-register{
+        margin: 2%;
+       padding-left: 5%;
+    }
+    </style>
+<div class="wrapper">
+    <div class="title">
+      <h1 class="h1-register">PASSWORD RESET</h1>
+    </div>
+
+     
+         <% if(error && error.length > 0) { %>
+         <div class="errors">
+            <ul class="ul-register">
+                <li><%= error %> </li>
+            </ul>
+         </div>
+       <% } %>
+     
+     <% if(success && success.length > 0) { %>
+         <div class="success">
+            <ul class="ul-register">
+                <li><%= success %> </li>
+            </ul>
+         </div>
+       <% } %>
+     
+    
+
+
+    <form class="form-register" action="/reset/<%= token %>" method="POST">
+      <div class="row">
+        
+ <div class="col-12">
+        <label class="label-register" for="password">New Password</label>
+        <input class="input-register" type="password" name="password">
+      </div>
+      <div class="col-12">
+        <label  class="label-register" for="confirm">Confirm Password</label>
+        <input  class="input-register" type="password" name="confirm">
+      </div>
+      <div class="col-12" id="button">
+        <button class="button-register" type="submit"><p class="p-register">UPDATE PASSWORD</p></button>
+      </div>
+
+
+      </div>
+     
+
+    </form>
+
+</div>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,56 @@
+<%- include("partials/header") %>
+ <link rel="stylesheet" type="text/css" href="stylesheets/registration.css">
+
+<div class="wrapper">
+		<div class="title">
+			<h1 class="h1-register">LOGIN</h1>
+		</div>
+
+     
+         <% if(error && error.length > 0) { %>
+         <div class="errors">
+            <ul class="ul-register">
+                <li><%= error %> </li>
+            </ul>
+         </div>
+       <% } %>
+     
+     <% if(success && success.length > 0) { %>
+         <div class="success">
+            <ul class="ul-register">
+                <li><%= success %> </li>
+            </ul>
+         </div>
+       <% } %>
+		
+
+
+           <form class="form-register" action="/login" method="post">
+
+           	   <div class="row row-two">
+               <div class="col-12 ">
+               <label class="label-register" for="email">Email</label>
+               <input class="input-register" type="email" name="email" placeholder="">
+                </div>
+
+                <div class="col-12 ">
+               <div class="row">
+                        <div class="col-6">
+                            <label class="label-register" for="password">Password</label>
+                        </div>
+                        <div class="col-6">
+                            <label class="label-register" for="password" id="forgot"><a class="a-register" href="/forgot">Forgot password?</a></label>
+                        </div>
+                    </div>
+               <input class="input-register" type="password" name="password" placeholder="">
+                </div>
+
+                <div class="col-12" id="button">
+               <button class="button-register" type="submit"><p class="p-register">SIGN IN</p></button>
+                </div>
+               </div>
+           </form>
+           <h6><a class="a-register" href="/register">Create account</a></h6>
+</div>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,43 @@
+var mongoose = require("mongoose");
+
+var BikeSchema = new mongoose.Schema({
+	name: String,
+	cost: Number,
+	images: [String],
+	description: String,
+    modelYear: Number,
+    wheelSize: Number,
+    topTubeSize: Number,
+    chainstayLength: Number,
+    headtubeAngle: Number,
+    seattubeAngle: Number,
+    standoverHeight: Number,
+    bottomBracketheight: Number,
+    forkOffset: Number,
+    frame: String,
+    pedals: String,
+    fork: String,
+    chain: String,
+    bars: String,
+    sprocket: String,
+    grips: String,
+    seat: String,
+    stem: String,
+    seatPost: String,
+    headset: String,
+    seatClamp: String,
+    brakeLever: String,
+    fronthub: String,
+    brakeCuble: String,
+    rearHub: String,
+    brakes: String,
+    driver: String,
+    cranks: String,
+    rims: String,
+    bottomBracket: String,
+    tires: String,
+    pegs: String,
+    weight: String
+});
+
+module.exports = mongoose.model("Bike", BikeSchema);

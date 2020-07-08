@@ -1,0 +1,104 @@
+.site-footer{
+  background: #333333;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+}
+.p-header{
+  color: #daaa00;
+  text-transform: uppercase;
+  font-family: 'Teko', sans-serif;
+  font-size: 21px;
+  line-height: 30.72px;
+  letter-spacing: 1.92px;
+}
+.col-md-3{
+  padding: 5%;
+}
+.col-2{
+  padding: 5%;
+}
+ .ul4{
+  font-family: 'Exo 2', sans-serif;
+  color: #ffffff;
+  font-size: 13.6px;
+}
+.footer-link{
+  font-family: 'Exo 2', sans-serif;
+  color: #ffffff;
+  font-size: 13.6px;
+}
+.footer-link:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+#input-email{
+  width: 50%;
+  height: 30px;
+  margin-top: 5%; 
+  border: 2px solid #daaa00;
+   font-family: 'Exo 2', sans-serif;
+   outline: none;
+   padding-left: 2%;
+}
+#email-btn{
+  margin-top: 5%; 
+  width: 100px;
+  background:  #daaa00;
+  border: none;
+}
+#footer-logo-img{
+  width: 100%;
+}
+.ul4{
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+   .col-2{
+    display: none;
+   }
+   .col-10{
+    padding-top: 0; 
+    width: 100%;
+    margin: 5% auto;
+   }
+   .fa-arrow-down{
+    padding-left: 89%;
+   }
+   .row-header{
+    width: 100%;
+    margin: 0 auto;
+   }
+   .col-6{
+    padding: 0;
+   }
+   .ul1{
+    display: none;
+   }
+   .ul2{
+    display: none;
+   }
+   .ul3{
+    display: none;
+   }
+   .row{
+      width: 100%;
+      margin: 0;
+   }
+   .col-12.col-md-3{
+    border-bottom: 1px solid #707070;
+    margin-bottom: 1%; 
+  }
+
+}
+@media screen and (min-width: 769px) {
+ .col-icon{
+  display: none;
+ }
+  input#input-email{
+   width: 100%;
+  }
+  .col-12.col-md-3{
+    margin: 0;
+  }
+}

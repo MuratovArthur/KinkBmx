@@ -1,0 +1,128 @@
+.media-page-header{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    min-height: 60px;
+    background: #1f1f1f;
+}
+.media-page-title{
+	margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+.media-download-head{
+    font-family: 'Exo 2', sans-serif;
+    color: #ffffff;
+    font-weight: 200;
+    max-width: 100%;
+    margin: 50px auto;
+    text-align: center;
+    line-height: 1.5em; 
+    font-size: 20px;
+}
+.media-button{
+display: block;
+width: 140px;
+margin: 0 auto;
+background: #000000;
+outline: none;
+border: 3px solid #dbaa0c;
+margin-bottom: 5%; 
+}
+.media-button-text{
+  margin: 0; padding: 10%; text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.media-button:hover{
+
+background: #dbaa0c;
+}
+.media-button-text:hover{
+  color: #000000;
+}
+.media-link{
+  color: #ffffff;
+}
+.media-link:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+.manuals-guides-header{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    min-height: 60px;
+    background: #1f1f1f;
+}
+.manuals-guides-title{
+  margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+.manuals-guides-download-head {
+    font-family: 'Exo 2', sans-serif;
+    color: #ffffff;
+    font-weight: 400;
+    max-width: 100%;
+    margin: 50px auto 12px auto;
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 25px;
+    letter-spacing: 0.1px;
+}
+.manuals-guides-button{
+display: block;
+width: 153px;
+margin: 0 auto;
+background: #000000;
+outline: none;
+border: 3px solid #dbaa0c;
+margin-bottom: 5%; 
+}
+.manuals-guides-text{
+  margin: 0; padding: 10%; text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.manuals-guides-button:hover{
+
+background: #dbaa0c;
+}
+.manuals-guides-text:hover{
+  color: #000000;
+}
+.manuals-guides-link{
+  color: #ffffff;
+}
+.manuals-guides-link:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media  screen and (max-width: 768px) {
+  .manuals-guides-button {
+    
+    width: 110px;
+  }
+  .manuals-guides-text {
+    font-size: 0.7rem;
+}
+.manuals-guides-download-head {
+
+    font-size: 17px;
+
+}
+}

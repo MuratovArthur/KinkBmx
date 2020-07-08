@@ -1,0 +1,82 @@
+header.catalogs-page-header{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    min-height: 60px;
+    background: #1f1f1f;
+}
+h1.catalogs-page-title{
+    margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 3.2em;
+    letter-spacing: 1.7px;
+    text-align: center;
+}
+
+
+.catalogs-content {
+    justify-content: center;
+    text-align: center
+}
+.catalogs-pic img {
+    margin-top: 57px;
+    width: 500px;
+}
+hr {
+    margin-top: 2px;
+    height: 1px;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.catalogs-links {
+    width: 37%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 31.5%;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+
+
+
+.catalogs-link  {
+    color: white;
+   
+
+
+}
+
+
+.catalogs-link:hover {
+    color: white;
+    text-decoration: none;
+
+
+
+}
+@media screen and (max-width: 505px) {
+   
+
+
+ .catalogs-pic img {
+    margin-top: 57px;
+    width: 92%;
+}
+
+.catalogs-links {
+    width: 97%;
+    padding-left: 3%;
+    margin-left: 0;
+
+
+}
+}
+.site-footer {
+   margin-top: 130px;
+}

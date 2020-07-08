@@ -1,0 +1,119 @@
+header.ss20-page-header{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    min-height: 60px;
+    background: #1f1f1f;
+}
+h1.ss20-page-title{
+    margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 3.2em;
+    letter-spacing: 1.7px;
+    text-align: center;
+}
+
+.ss20-content {
+    justify-content: center;
+    text-align: center;
+
+
+}
+.ss20-look-book {
+    margin-top: 80px;
+    width: 70%;
+}
+
+
+.ss20-pic img {
+    margin-top: 57px;
+    width: 70%;
+}
+
+.ss20-links {
+    width: 85%;
+    text-align: center;
+    justify-content: center;
+    padding-left: 15%;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+
+}
+
+
+
+.ss20-left-link  {  
+    color: white;
+    padding-bottom: 3px;
+    float: left;
+
+    background-image: linear-gradient(#fbff00, #efff00);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .4s;
+
+}
+.ss20-left-link:hover, .ss20-left-link:focus {
+   background-size: 100% 2px;
+}
+
+.ss20-left-link:hover {  
+    color: white;
+    text-decoration: none;
+
+}
+.underline {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #836600;
+    opacity: 80%;
+}
+.ss20-right-link  {
+   color: white;
+   padding-bottom: 3px;
+   float: right;
+   background-image: linear-gradient(#fbff00, #efff00);
+   background-position: 0% 100%;
+   background-repeat: no-repeat;
+   background-size: 0% 2px;
+   transition: background-size .4s;
+
+
+}
+.ss20-right-link:hover, .ss20-right-link:focus {
+   background-size: 100% 2px;
+}
+
+.ss20-right-link:hover {
+    color: white;
+    text-decoration: none;
+
+
+}
+
+@media screen and (max-width: 769px) {
+    .ss20-look-book {
+     margin-top: 40px;
+     width: 95%;
+ }
+
+
+ .ss20-pic img {
+    margin-top: 57px;
+    width: 95%;
+}
+
+.ss20-links {
+    width: 97%;
+    padding-left: 3%;
+
+
+}
+}
+.site-footer {
+   margin-top: 130px;
+}
