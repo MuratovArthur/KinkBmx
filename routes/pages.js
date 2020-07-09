@@ -4,6 +4,7 @@ var fs = require('fs');
 var formidable = require('formidable');
 const multer = require('multer');
 const path = require('path');
+var Return  = require("../models/return");
 
 
 
@@ -78,6 +79,23 @@ router.get("/download", (req, res) => {
 
 router.get("/returns", function(req,res) {
    res.render("returns");
+});
+
+router.post("/returns", function(req, res){
+   const  { order, firstName, secondName, streetAdress, city, state, zip, country, email, phoneNumber, item} = req.body.return;
+  if ( !order || !firstName || !secondName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !item) {
+    req.flash('error', 'Please enter all of first four fields with "*"');
+    return res.redirect('back');
+  } else{
+    Return.create(req.body.return, function(err, newReturn){
+      if(err){
+          console.log(err);
+      }else{
+         res.redirect("/");
+         console.log(req.body.return);
+      }
+    });
+  } 
 });
 
 router.get("/warranty", function(req,res) {

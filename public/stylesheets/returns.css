@@ -1,3 +1,16 @@
+    .errors{
+        width: 100%;
+        color: #d02e2e;
+        background: #fff6f6;
+        font-family: 'Exo 2', sans-serif;
+        margin: 0 auto;
+        margin-bottom: 4%; 
+        border: 2px solid #d02e2e;
+    }
+    .ul-register{
+        margin: 1%;
+        padding-left: 5%;
+    }
 .returns-page-header{
     width: 100%;
     text-align: center;
@@ -17,6 +30,7 @@
 }
 .returns-page-content {
     padding: 10%;
+    padding-top: 0; 
     max-width: 1200px;
     margin: 0 auto;
     font-family: 'Exo 2', sans-serif;
@@ -154,6 +168,14 @@ margin-top: 10px;
 width: 100px;
 
 }
+.returns-page-content {
+    padding-top: 7%;
+}
+.ul-register{
+        font-size: 14px;
+         padding-left: 8%;
+         margin: 2%;
+    }
 }
 
 

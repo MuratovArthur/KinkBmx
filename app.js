@@ -51,6 +51,7 @@ var express         = require("express"),
     Sweatshirt      = require("./models/sweatshirt"),
     Tshirt          = require("./models/tShirt"),
     Tire            = require("./models/tire"),
+    Return          = require("./models/return"),
     User            = require("./models/user");
     
 

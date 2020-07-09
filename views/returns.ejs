@@ -6,6 +6,16 @@
 </header>
 
 <div class="returns-page-content">
+
+	<% if(error && error.length > 0) { %>
+         <div class="errors">
+            <ul class="ul-register">
+                <li><%= error %> </li>
+            </ul>
+         </div>
+       <% } %>
+
+
 	<b>Refunds</b>
 	<ul>
 		<li class="returns-page-content-li">We want you to be completely satisfied with your purchase! If you are not 100% satisfied, you can return your item(s) for a refund within 30 days of purchase. (Returns must be unused, in the same condition you received them, and in the original packaging.)</li>
@@ -46,11 +56,15 @@
 		<li class="returns-page-content-li">Replacement items will be shipped out once your returned items have been received.</li>
 	</ul>
 	<hr class="returns-page-content-hr">
+
+	
+
+	<form action="/pages/returns" method="post">
 	<h6 class="returns-page-content-h6">Customer Info</h6>
 	<div class="row">
 		<div class="col-md-6 returns-page-content-col-md-6">
 			<div class="date-picker">
-			<input class="returns-page-content-input selected-date" name="" placeholder="Date (dd/mm/yyyy)*" disabled>
+			<input class="returns-page-content-input selected-date" name="return[date]" placeholder="Date (dd/mm/yyyy)*" readonly="readonly">
 			    <div class="dates">
 
 			    <div class="month">
@@ -65,56 +79,57 @@
 		    </div>
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="" placeholder="Order #*">
+			<input class="returns-page-content-input" type="" name="return[order]" placeholder="Order #*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="" placeholder="First Name*">
+			<input class="returns-page-content-input" type="" name="return[firstName]" placeholder="First Name*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="" placeholder="Last Name*">
+			<input class="returns-page-content-input" type="" name="return[secondName]" placeholder="Last Name*">
 		</div>
 		<div class="col-md-12 returns-page-content-col-md-12">
-			<input class="returns-page-content-input" type="" name="" placeholder="Street Adress*">
+			<input class="returns-page-content-input" type="" name="return[streetAdress]" placeholder="Street Adress*">
 		</div>
 		<div class="col-md-12 returns-page-content-col-md-12">
-			<input class="returns-page-content-input" type="" name="" placeholder="Street Adress Line 2">
+			<input class="returns-page-content-input" type="" name="return[streetAdressLine]" placeholder="Street Adress Line 2">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" name="" placeholder="City*">
+			<input class="returns-page-content-input" name="return[city]" placeholder="City*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="" placeholder="State/Province*">
+			<input class="returns-page-content-input" type="" name="return[state]" placeholder="State/Province*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="" placeholder="ZIP/Postal code*">
+			<input class="returns-page-content-input" type="" name="return[zip]" placeholder="ZIP/Postal code*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="" placeholder="Country*">
+			<input class="returns-page-content-input" type="" name="return[country]" placeholder="Country*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="" placeholder="Email*">
+			<input class="returns-page-content-input" type="" name="return[email]" placeholder="Email*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="" placeholder="Phone Number*">
+			<input class="returns-page-content-input" type="" name="return[phoneNumber]" placeholder="Phone Number*">
 		</div>
 	</div>
 		<h6 class="returns-page-content-h6">Return Details</h6>
 	<div class="row">
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" name="" placeholder="Item being returned(Ex. Titan II) Frame">
+			<input class="returns-page-content-input" name="return[item]" placeholder="Item being returned(Ex. Titan II) Frame*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="" placeholder="Reason for return">
+			<input class="returns-page-content-input" type="" name="return[reason]" placeholder="Reason for return">
 		</div>
 	</div>
 	<h6 class="returns-page-content-h6">Additional comments</h6>
 	<div class="row">
 		<div class="col-md-12 returns-page-content-col-md-12">
-			<textarea class="returns-page-content-textarea"></textarea>
+			<textarea class="returns-page-content-textarea" name="return[comment]"></textarea>
 		</div>
 	</div>
 	<button class="returns-button" type="submit"><p class="returns-button-text" >Submit</p></button>
 </div>
+</form>
 
 <script type="text/javascript">
 const date_picker_element = document.querySelector('.date-picker');
@@ -124,6 +139,8 @@ const mth_element = document.querySelector('.date-picker .dates .month .mth');
 const next_mth_element = document.querySelector('.date-picker .dates .month .next-mth');
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
+const returns_page_content = document.querySelector('.returns-page-content');
+
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -145,6 +162,7 @@ selected_date_element.dataset.value = selectedDate;
 populateDates();
 
 // EVENT LISTENERS
+returns_page_content.addEventListener('click', hideDatePicker);
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPrevMonth);
@@ -154,7 +172,14 @@ function toggleDatePicker (e) {
 
 	if (!checkEventPathForClass(e.path, 'dates')) {
 		dates_element.classList.toggle('active');
-		selected_date_element.value = formatDate(date);
+	}
+}
+
+function hideDatePicker (e) {
+
+
+	if (!checkEventPathForClass(e.path, 'dates')) {
+		
 	}
 }
 
