@@ -1,5 +1,6 @@
 <%- include("partials/header") %>
 
+
 <link rel="stylesheet" type="text/css" href="/stylesheets/returns.css">
 <header class="returns-page-header">
 	<h1 class="returns-page-title">Returns</h1>
@@ -7,13 +8,7 @@
 
 <div class="returns-page-content">
 
-	<% if(error && error.length > 0) { %>
-         <div class="errors">
-            <ul class="ul-register">
-                <li><%= error %> </li>
-            </ul>
-         </div>
-       <% } %>
+
 
 
 	<b>Refunds</b>
@@ -55,9 +50,15 @@
 		    <p class="returns-page-content-p"  style="margin-bottom: 20px; ">USA</p>
 		<li class="returns-page-content-li">Replacement items will be shipped out once your returned items have been received.</li>
 	</ul>
-	<hr class="returns-page-content-hr">
+	<hr class="returns-page-content-hr" id="error">
 
-	
+	<% if(error && error.length > 0) { %>
+         <div class="errors" >
+            <ul class="ul-register">
+                <li><%= error %> </li>
+            </ul>
+         </div>
+       <% } %>	
 
 	<form action="/pages/returns" method="post">
 	<h6 class="returns-page-content-h6">Customer Info</h6>
@@ -139,7 +140,9 @@ const mth_element = document.querySelector('.date-picker .dates .month .mth');
 const next_mth_element = document.querySelector('.date-picker .dates .month .next-mth');
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
-const returns_page_content = document.querySelector('.returns-page-content');
+const submit_btn = document.querySelector('.returns-button');
+const inputs  = document.querySelectorAll(".returns-page-content-input");
+
 
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -162,12 +165,14 @@ selected_date_element.dataset.value = selectedDate;
 populateDates();
 
 // EVENT LISTENERS
-returns_page_content.addEventListener('click', hideDatePicker);
+submit_btn.addEventListener('click', checkInputs);
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPrevMonth);
 
 // FUNCTIONS
+
+
 function toggleDatePicker (e) {
 
 	if (!checkEventPathForClass(e.path, 'dates')) {
@@ -175,12 +180,14 @@ function toggleDatePicker (e) {
 	}
 }
 
-function hideDatePicker (e) {
-
-
-	if (!checkEventPathForClass(e.path, 'dates')) {
-		
-	}
+function checkInputs (e){
+        window.onload = function() {
+        inputs.forEach((input) => {
+        	if (input.value == ""){
+        		input.style.borderColor = "red";
+        	}
+		});
+}
 }
 
 function goToNextMonth (e) {

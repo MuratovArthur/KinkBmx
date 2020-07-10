@@ -85,7 +85,7 @@ router.post("/returns", function(req, res){
    const  { order, firstName, secondName, streetAdress, city, state, zip, country, email, phoneNumber, item} = req.body.return;
   if ( !order || !firstName || !secondName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !item) {
     req.flash('error', 'Please enter all of first four fields with "*"');
-    return res.redirect('back');
+    return res.redirect('/pages/returns#error');
   } else{
     Return.create(req.body.return, function(err, newReturn){
       if(err){
@@ -101,6 +101,7 @@ router.post("/returns", function(req, res){
 router.get("/warranty", function(req,res) {
    res.render("warranty");
 });
+
 
 
 
