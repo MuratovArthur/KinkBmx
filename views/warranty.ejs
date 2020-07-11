@@ -68,67 +68,76 @@
 	<ul>
 		<li class="warranty-page-content-li">If you live outside of the United States; please contact the Kink distributor in the country where you purchased the Kink product. A full list of international distributors can be found on our website at www.kinkbmx.com.</li>
 	</ul>
-	<hr class="warranty-page-content-hr">
+	<hr class="warranty-page-content-hr" id="error">
+	<% if(error && error.length > 0) { %>
+         <div class="errors" >
+            <ul class="ul-register">
+                <li><%= error %> </li>
+            </ul>
+         </div>
+       <% } %>	
+
+       <form action="/pages/warranty" method="post">
 	<b>Warranty Claim Form</b>
 	<h6 class="warranty-page-content-h6">Rider Info</h6>
 	<div class="row">
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="" placeholder="First Name*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[firstName]" placeholder="First Name*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Last Name*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[lastName]" placeholder="Last Name*">
 		</div>
 		<div class="col-md-12 warranty-page-content-col-md-12">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Street Adress*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[streetAdress]" placeholder="Street Adress*">
 		</div>
 		<div class="col-md-12 warranty-page-content-col-md-12">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Street Adress Line 2">
+			<input class="warranty-page-content-input" type="" name="warranty[streetAdressLine]" placeholder="Street Adress Line 2">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" name="" placeholder="City*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" name="warranty[city]" placeholder="City*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="" placeholder="State/Province*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[state]" placeholder="State/Province*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="" placeholder="ZIP/Postal code*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[zip]" placeholder="ZIP/Postal code*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Country*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[country]" placeholder="Country*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Email*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[email]" placeholder="Email*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Phone Number*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[phoneNumber]" placeholder="Phone Number*">
 		</div>
 	</div>
 		<h6 class="warranty-page-content-h6">Product Details</h6>
 	<div class="row">
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" name="" placeholder="Product (Ex. Titan II Frame)">
+			<input class="warranty-page-content-input warranty-page-content-input-main" name="warranty[product]" placeholder="Product (Ex. Titan II Frame)*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Color (Ex. Black)">
+			<input class="warranty-page-content-input" type="" name="warranty[color]" placeholder="Color (Ex. Black)">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Size (Ex. 20.5in / 175mm)">
+			<input class="warranty-page-content-input" type="" name="warranty[size]" placeholder="Size (Ex. 20.5in / 175mm)">
 		</div>
 		<div class="col-md-12 warranty-page-content-col-md-12">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Serial number or date code (bikes, frames, forks, bars, cranks only)">
+			<input class="warranty-page-content-input" type="" name="warranty[serialNumber]" placeholder="Serial number or date code (bikes, frames, forks, bars, cranks only)">
 		</div>
 	</div>
 	<h6 class="warranty-page-content-h6">PURCHASE & ASSEMBLY DETAILS</h6>
 	<div class="row">
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" name="" placeholder="Bike Shop or online retailer*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" name="warranty[bikeShop]" placeholder="Bike Shop or online retailer*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Model year (Ex.2015)">
+			<input class="warranty-page-content-input" type="" name="warranty[modelYear]" placeholder="Model year (Ex.2015)">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
 			<div class="date-picker">
-			<input class="warranty-page-content-input selected-date" name="" placeholder="Date (dd/mm/yyyy)*" disabled>
+			<input class="warranty-page-content-input selected-date " name="warranty[purchaseDate]" placeholder="Date (dd/mm/yyyy)*" disabled>
 			    <div class="dates">
 
 			    <div class="month">
@@ -142,33 +151,34 @@
 		         </div>
 		    </div>
 		</div>
-		<div class="col-md-12 warranty-page-content-col-md-12">
-			<input class="warranty-page-content-input" type="" name="" placeholder="Assembled by myself/ bike shop">
+		<div class="col-md-6 warranty-page-content-col-md-12">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[assembledBy]" placeholder="Assembled by myself/ bike shop">
 		</div>
 	</div>
 	<h6 class="warranty-page-content-h6">PRODUCT ISSUE/DEFECT INFORMATION</h6>
 	<div class="row">
 		<div class="col-md-12 warranty-page-content-col-md-12">
-			<textarea class="warranty-page-content-textarea"></textarea>
+			<textarea class="warranty-page-content-textarea warranty-page-content-input-main" name="warranty[issue]"></textarea>
 		</div>
 	</div>
 	<h6 class="warranty-page-content-h6">UPLOAD PROOF OF PURCHASE OR RECEIPT (SCAN OR MOBILE PHOTO)</h6>
 	<div class="form-group">
-  	<form action="/pages/upload" method="POST" enctype="multipart/form-data">
+  	 
     <input type="file" name="img" id="file" class="input-file">
     <label for="file" class="btn btn-tertiary js-labelFile">
       <span class="warranty-button-text warranty-button-text-upload">Upload file</span>
     </label>
-     </form>
+   
   </div>
 	<h6 class="warranty-page-content-h6">UPLOAD PRODUCT IMAGES, INCLUDING IMAGES OF DEFECTS</h6>
 	<div class="form-group">
-  	<form action="/pages/upload" method="POST" enctype="multipart/form-data">
+  	
     <input type="file" name="img" id="file" class="input-file">
     <label for="file" class="btn btn-tertiary js-labelFile">
       <span class="warranty-button-text">Upload file</span>
     </label>
-     </form>
+    
+
   </div>
 	<button class="warranty-button" type="submit"><p class="warranty-button-text">Submit</p></button>
 
@@ -178,6 +188,7 @@
 
 	
 </div>
+</form>
 <script type="text/javascript">
 const date_picker_element = document.querySelector('.date-picker');
 const selected_date_element = document.querySelector('.selected-date');
@@ -186,6 +197,9 @@ const mth_element = document.querySelector('.date-picker .dates .month .mth');
 const next_mth_element = document.querySelector('.date-picker .dates .month .next-mth');
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
+const inputs_main  = document.querySelectorAll(".warranty-page-content-input-main");
+
+
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -205,19 +219,48 @@ mth_element.textContent = months[month] + ' ' + year;
 selected_date_element.dataset.value = selectedDate;
 
 populateDates();
+checkInputs();
 
+
+              
+ 
 // EVENT LISTENERS
+
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPrevMonth);
 
 // FUNCTIONS
+
+
 function toggleDatePicker (e) {
 
 	if (!checkEventPathForClass(e.path, 'dates')) {
 		dates_element.classList.toggle('active');
-		selected_date_element.value = formatDate(date);
+		selected_date_element.dataset.value = selectedDate;
+		checkInputs();
 	}
+}
+
+function checkInputs (e){	
+        
+        inputs_main.forEach((input) => {
+        	input.oninput = function (){
+	        if (input.value == ""){
+        		input.style.borderColor = "red";
+        	}
+            if (input.value !== ""){
+        		input.style.borderColor = 'rgb(129, 129, 129)';
+            }
+            };
+         	
+        	if (input.value == ""){
+        		input.style.borderColor = "red";
+        	}
+            if (input.value !== ""){
+        		input.style.borderColor = 'rgb(129, 129, 129)';
+            }
+        });
 }
 
 function goToNextMonth (e) {

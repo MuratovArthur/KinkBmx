@@ -1,3 +1,17 @@
+
+ .errors{
+        width: 100%;
+        color: #d02e2e;
+        background: #fff6f6;
+        font-family: 'Exo 2', sans-serif;
+        margin: 5% auto;
+        border: 2px solid #d02e2e;
+    }
+    .ul-register{
+        margin: 1%;
+        padding-left: 5%;
+    }
+
 .warranty-page-header{
     width: 100%;
     text-align: center;
