@@ -69,13 +69,13 @@
 		<li class="warranty-page-content-li">If you live outside of the United States; please contact the Kink distributor in the country where you purchased the Kink product. A full list of international distributors can be found on our website at www.kinkbmx.com.</li>
 	</ul>
 	<hr class="warranty-page-content-hr" id="error">
-	<% if(error && error.length > 0) { %>
-         <div class="errors" >
+	
+	 <div class="errors" >
             <ul class="ul-register">
-                <li><%= error %> </li>
+                <li>Please enter all of first four fields with "*"</li>
             </ul>
          </div>
-       <% } %>	
+
 
        <form action="/pages/warranty" method="post">
 	<b>Warranty Claim Form</b>
@@ -180,8 +180,9 @@
     
 
   </div>
+  <div class="clickable">
 	<button class="warranty-button" type="submit"><p class="warranty-button-text">Submit</p></button>
-
+  </div>
    
 
   
@@ -198,6 +199,10 @@ const next_mth_element = document.querySelector('.date-picker .dates .month .nex
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
 const inputs_main  = document.querySelectorAll(".warranty-page-content-input-main");
+const submit_btn = document.querySelector('.warranty-button');
+const clickable = document.querySelector('.clickable');
+const errors_div = document.querySelector('.errors');
+
 
 
 
@@ -218,26 +223,26 @@ mth_element.textContent = months[month] + ' ' + year;
 
 
 populateDates();
-checkInputs();
+ checkInputs();
 
-
-              
- 
 // EVENT LISTENERS
-
+clickable.addEventListener('click', showMessage);
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPrevMonth);
 
 // FUNCTIONS
-
+function showMessage(e) {
+	errors_div.style.display = "block";
+	window.location = "/pages/warranty#error";
+}
 
 function toggleDatePicker (e) {
 
 	if (!checkEventPathForClass(e.path, 'dates')) {
 		dates_element.classList.toggle('active');
 		selected_date_element.value = formatDate(selectedDate);
-		selected_date_element.dataset.value = selectedDate;
+        selected_date_element.dataset.value = selectedDate;
 		checkInputs();
 	}
 }

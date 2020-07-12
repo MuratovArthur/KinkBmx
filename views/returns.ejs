@@ -52,13 +52,12 @@
 	</ul>
 	<hr class="returns-page-content-hr" id="error">
 
-	<% if(error && error.length > 0) { %>
          <div class="errors" >
             <ul class="ul-register">
-                <li><%= error %> </li>
+                <li>Please enter all of first four fields with "*"</li>
             </ul>
          </div>
-       <% } %>	
+
 
 	<form action="/pages/returns" method="post">
 	<h6 class="returns-page-content-h6">Customer Info</h6>
@@ -128,7 +127,10 @@
 			<textarea class="returns-page-content-textarea" name="return[comment]"></textarea>
 		</div>
 	</div>
-	<button class="returns-button" type="submit"><p class="returns-button-text" >Submit</p></button>
+	<div class="clickable">
+		<button class="returns-button" type="submit"><p class="returns-button-text" >Submit</p></button>
+	</div>
+	
 </div>
 </form>
 
@@ -142,6 +144,7 @@ const prev_mth_element = document.querySelector('.date-picker .dates .month .pre
 const days_element = document.querySelector('.date-picker .dates .days');
 const inputs_main  = document.querySelectorAll(".returns-page-content-input-main");
 const submit_btn = document.querySelector('.returns-button');
+const clickable = document.querySelector('.clickable');
 const errors_div = document.querySelector('.errors');
 
 
@@ -165,14 +168,18 @@ mth_element.textContent = months[month] + ' ' + year;
 
 populateDates();
  checkInputs();
-// EVENT LISTENERS
 
+// EVENT LISTENERS
+clickable.addEventListener('click', showMessage);
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPrevMonth);
 
 // FUNCTIONS
-
+function showMessage(e) {
+	errors_div.style.display = "block";
+	window.location = "/pages/returns#error";
+}
 
 function toggleDatePicker (e) {
 
