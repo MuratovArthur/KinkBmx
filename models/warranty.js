@@ -19,7 +19,8 @@ var WarrantySchema = new mongoose.Schema({
     modelYear: String,
     purchaseDate: String,
     assembledBy: String,
-    issue: String
+    issue: String,
+    img: String
 });
 
 module.exports = mongoose.model("Warranty", WarrantySchema);

@@ -7,6 +7,17 @@ const path = require('path');
 var Return  = require("../models/return");
 var Warranty  = require("../models/warranty");
 
+var Storage= multer.diskStorage({
+  destination:"./public/uploads/",
+  filename:(req,file,cb)=>{
+    cb(null,file.fieldname+"_"+Date.now()+path.extname(file.originalname));
+  }
+});
+
+var upload = multer({
+  storage:Storage
+}).single('img');
+
 
 
 router.get("/dealer-locator", function(req,res) {
@@ -103,18 +114,22 @@ router.get("/warranty", function(req,res) {
    res.render("warranty");
 });
 
-router.post("/warranty", function(req, res){
+router.post("/warranty", upload,  function(req, res){
    const  { firstName, lastName, streetAdress, city, state, zip, country, email, phoneNumber, product, bikeShop, assembledBy, issue} = req.body.warranty;
+   const  img  = req.file.filename;
+
+   var newWarranry = { img: img, firstName: firstName, lastName: lastName, streetAdress: streetAdress, city: city, state: state, zip: zip, country: country, email: email, phoneNumber: phoneNumber, product: product, bikeShop: bikeShop, assembledBy: assembledBy, issue: issue };
+   
   if ( !firstName || !lastName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !product || !bikeShop || !assembledBy ) {
     req.flash('error', 'Please enter all of first four fields with "*"');
     return res.redirect('/pages/warranty#error');
   } else{
-    Warranty.create(req.body.warranty, function(err, newReturn){
+    Warranty.create(newWarranry, function(err, newReturn){
       if(err){
           console.log(err);
       }else{
          res.redirect("/");
-         console.log(req.body.warranty);
+         console.log(newWarranry);
       }
     });
   } 
@@ -123,60 +138,8 @@ router.post("/warranty", function(req, res){
 
 
 
-// Set The Storage Engine
-const storage = multer.diskStorage({
-  destination: './routes/uploads/',
-  filename: function(req, file, cb){
-    cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-  }
-});
-
-// Init Upload
-const upload = multer({
-  storage: storage,
-  limits:{fileSize: 10000000},
-  fileFilter: function(req, file, cb){
-    checkFileType(file, cb);
-  }
-}).single('img');
-
-// Check File Type
-function checkFileType(file, cb){
-  // Allowed ext
-  const filetypes = /jpeg|jpg|png|gif/;
-  // Check ext
-  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-  // Check mime
-  const mimetype = filetypes.test(file.mimetype);
-
-  if(mimetype && extname){
-    return cb(null,true);
-  } else {
-    cb('Error: Images Only!');
-  }
-}
 
 
-router.post('/upload', (req, res) => {
-  upload(req, res, (err) => {
-    if(err){
-      res.render('warranty', {
-        msg: err
-      });
-    } else {
-      if(req.file == undefined){
-        res.render('warranty', {
-          msg: 'Error: No File Selected!'
-        });
-      } else {
-        res.render('warranty', {
-          msg: 'File Uploaded!',
-          file: `${__dirname}/uploads/${req.file.filename}`
-        });
-      }
-    }
-  });
-});
 
 
 module.exports = router;
