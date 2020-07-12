@@ -12,7 +12,7 @@ var ReturnSchema = new mongoose.Schema({
     zip: String,
     country: String,
     email: String,
-    phoneNumber: Number,
+    phoneNumber: String,
     item: String,
     reason: String,
     comment: String

@@ -3,8 +3,9 @@
         color: #d02e2e;
         background: #fff6f6;
         font-family: 'Exo 2', sans-serif;
-        margin: 5% auto;
+        margin: 3% auto;
         border: 2px solid #d02e2e;
+        display: none;
     }
     .ul-register{
         margin: 1%;

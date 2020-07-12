@@ -52,20 +52,19 @@
 	</ul>
 	<hr class="returns-page-content-hr" id="error">
 
-	<% if(error && error.length > 0) { %>
          <div class="errors" >
             <ul class="ul-register">
-                <li><%= error %> </li>
+                <li>Please enter all of first four fields with "*"</li>
             </ul>
          </div>
-       <% } %>	
+
 
 	<form action="/pages/returns" method="post">
 	<h6 class="returns-page-content-h6">Customer Info</h6>
 	<div class="row">
 		<div class="col-md-6 returns-page-content-col-md-6">
 			<div class="date-picker">
-			<input class="returns-page-content-input selected-date" name="return[date]" placeholder="Date (dd/mm/yyyy)*" readonly="readonly">
+			<input class="returns-page-content-input selected-date returns-page-content-input-main" name="return[date]" placeholder="Date (dd/mm/yyyy)*" readonly="readonly">
 			    <div class="dates">
 
 			    <div class="month">
@@ -80,43 +79,43 @@
 		    </div>
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="return[order]" placeholder="Order #*">
+			<input class="returns-page-content-input returns-page-content-input-main" type="" name="return[order]" placeholder="Order #*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="return[firstName]" placeholder="First Name*">
+			<input class="returns-page-content-input returns-page-content-input-main" type="" name="return[firstName]" placeholder="First Name*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="return[secondName]" placeholder="Last Name*">
+			<input class="returns-page-content-input returns-page-content-input-main" type="" name="return[secondName]" placeholder="Last Name*">
 		</div>
 		<div class="col-md-12 returns-page-content-col-md-12">
-			<input class="returns-page-content-input" type="" name="return[streetAdress]" placeholder="Street Adress*">
+			<input class="returns-page-content-input returns-page-content-input-main" type="" name="return[streetAdress]" placeholder="Street Adress*">
 		</div>
 		<div class="col-md-12 returns-page-content-col-md-12">
 			<input class="returns-page-content-input" type="" name="return[streetAdressLine]" placeholder="Street Adress Line 2">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" name="return[city]" placeholder="City*">
+			<input class="returns-page-content-input returns-page-content-input-main" name="return[city]" placeholder="City*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="return[state]" placeholder="State/Province*">
+			<input class="returns-page-content-input returns-page-content-input-main" type="" name="return[state]" placeholder="State/Province*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="return[zip]" placeholder="ZIP/Postal code*">
+			<input class="returns-page-content-input returns-page-content-input-main" type="" name="return[zip]" placeholder="ZIP/Postal code*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="return[country]" placeholder="Country*">
+			<input class="returns-page-content-input returns-page-content-input-main" type="" name="return[country]" placeholder="Country*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="return[email]" placeholder="Email*">
+			<input class="returns-page-content-input returns-page-content-input-main" type="email" name="return[email]" placeholder="Email*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" type="" name="return[phoneNumber]" placeholder="Phone Number*">
+			<input class="returns-page-content-input returns-page-content-input-main" type="" name="return[phoneNumber]" placeholder="Phone Number*">
 		</div>
 	</div>
 		<h6 class="returns-page-content-h6">Return Details</h6>
 	<div class="row">
 		<div class="col-md-6 returns-page-content-col-md-6">
-			<input class="returns-page-content-input" name="return[item]" placeholder="Item being returned(Ex. Titan II) Frame*">
+			<input class="returns-page-content-input returns-page-content-input-main" name="return[item]" placeholder="Item being returned(Ex. Titan II) Frame*">
 		</div>
 		<div class="col-md-6 returns-page-content-col-md-6">
 			<input class="returns-page-content-input" type="" name="return[reason]" placeholder="Reason for return">
@@ -128,7 +127,10 @@
 			<textarea class="returns-page-content-textarea" name="return[comment]"></textarea>
 		</div>
 	</div>
-	<button class="returns-button" type="submit"><p class="returns-button-text" >Submit</p></button>
+	<div class="clickable">
+		<button class="returns-button" type="submit"><p class="returns-button-text" >Submit</p></button>
+	</div>
+	
 </div>
 </form>
 
@@ -140,8 +142,11 @@ const mth_element = document.querySelector('.date-picker .dates .month .mth');
 const next_mth_element = document.querySelector('.date-picker .dates .month .next-mth');
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
+const inputs_main  = document.querySelectorAll(".returns-page-content-input-main");
 const submit_btn = document.querySelector('.returns-button');
-const inputs  = document.querySelectorAll(".returns-page-content-input");
+const clickable = document.querySelector('.clickable');
+const errors_div = document.querySelector('.errors');
+
 
 
 
@@ -160,34 +165,54 @@ let selectedYear = year;
 mth_element.textContent = months[month] + ' ' + year;
 
 
-selected_date_element.dataset.value = selectedDate;
 
 populateDates();
+ checkInputs();
 
 // EVENT LISTENERS
-submit_btn.addEventListener('click', checkInputs);
+clickable.addEventListener('click', showMessage);
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPrevMonth);
 
 // FUNCTIONS
-
+function showMessage(e) {
+	errors_div.style.display = "block";
+	window.location = "/pages/returns#error";
+}
 
 function toggleDatePicker (e) {
 
 	if (!checkEventPathForClass(e.path, 'dates')) {
 		dates_element.classList.toggle('active');
+		selected_date_element.value = formatDate(selectedDate);
+        selected_date_element.dataset.value = selectedDate;
+		checkInputs();
 	}
 }
 
-function checkInputs (e){
-        window.onload = function() {
-        inputs.forEach((input) => {
-        	if (input.value == ""){
+function checkInputs (e){	
+        
+        inputs_main.forEach((input) => {
+        	input.oninput = function (){
+	        if (input.value == ""){
         		input.style.borderColor = "red";
         	}
-		});
-}
+            if (input.value !== ""){
+        		input.style.borderColor = 'rgb(129, 129, 129)';
+        		$('.returns-button').attr('disabled', false);
+            }
+            };
+         	
+        	if (input.value == ""){
+        		input.style.borderColor = "red";
+        		$('.returns-button').attr('disabled', true);
+        	}
+            if (input.value !== ""){
+        		input.style.borderColor = 'rgb(129, 129, 129)';
+        		$('.returns-button').attr('disabled', false);
+            }
+        });
 }
 
 function goToNextMonth (e) {

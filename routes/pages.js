@@ -5,6 +5,7 @@ var formidable = require('formidable');
 const multer = require('multer');
 const path = require('path');
 var Return  = require("../models/return");
+var Warranty  = require("../models/warranty");
 
 
 
@@ -100,6 +101,23 @@ router.post("/returns", function(req, res){
 
 router.get("/warranty", function(req,res) {
    res.render("warranty");
+});
+
+router.post("/warranty", function(req, res){
+   const  { firstName, lastName, streetAdress, city, state, zip, country, email, phoneNumber, product, bikeShop, assembledBy, issue} = req.body.warranty;
+  if ( !firstName || !lastName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !product || !bikeShop || !assembledBy ) {
+    req.flash('error', 'Please enter all of first four fields with "*"');
+    return res.redirect('/pages/warranty#error');
+  } else{
+    Warranty.create(req.body.warranty, function(err, newReturn){
+      if(err){
+          console.log(err);
+      }else{
+         res.redirect("/");
+         console.log(req.body.warranty);
+      }
+    });
+  } 
 });
 
 
