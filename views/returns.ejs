@@ -141,6 +141,9 @@ const next_mth_element = document.querySelector('.date-picker .dates .month .nex
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
 const inputs_main  = document.querySelectorAll(".returns-page-content-input-main");
+const submit_btn = document.querySelector('.returns-button');
+const errors_div = document.querySelector('.errors');
+
 
 
 
@@ -159,7 +162,6 @@ let selectedYear = year;
 mth_element.textContent = months[month] + ' ' + year;
 
 
-selected_date_element.dataset.value = selectedDate;
 
 populateDates();
  checkInputs();
@@ -176,7 +178,8 @@ function toggleDatePicker (e) {
 
 	if (!checkEventPathForClass(e.path, 'dates')) {
 		dates_element.classList.toggle('active');
-		selected_date_element.dataset.value = selectedDate;
+		selected_date_element.value = formatDate(selectedDate);
+        selected_date_element.dataset.value = selectedDate;
 		checkInputs();
 	}
 }
@@ -190,14 +193,17 @@ function checkInputs (e){
         	}
             if (input.value !== ""){
         		input.style.borderColor = 'rgb(129, 129, 129)';
+        		$('.returns-button').attr('disabled', false);
             }
             };
          	
         	if (input.value == ""){
         		input.style.borderColor = "red";
+        		$('.returns-button').attr('disabled', true);
         	}
             if (input.value !== ""){
         		input.style.borderColor = 'rgb(129, 129, 129)';
+        		$('.returns-button').attr('disabled', false);
             }
         });
 }

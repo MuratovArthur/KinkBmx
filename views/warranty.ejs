@@ -58,7 +58,7 @@
 		<li class="warranty-page-content-li">After the Kink warranty department has issued you an RA#, you must send the defective product back to Kink. The package must be clearly labeled with the RA#.</li>
 		<li class="warranty-page-content-li">Ship the item(s) back via USPS Priority Mail, UPS, or FedEx to:</li>
 		    <p class="warranty-page-content-p" style="margin-top:20px; ">Kink BMX</p>
-		    <p class="warranty-page-content-p">ATTN: Returns</p>
+		    <p class="warranty-page-content-p">ATTN: warranty</p>
 		    <p class="warranty-page-content-p">40 Greenleaf St</p>
 		    <p class="warranty-page-content-p">Rochester, NY 14609</p>
 		    <p class="warranty-page-content-p"  style="margin-bottom: 20px; ">USA</p>
@@ -216,7 +216,6 @@ let selectedYear = year;
 mth_element.textContent = months[month] + ' ' + year;
 
 
-selected_date_element.dataset.value = selectedDate;
 
 populateDates();
 checkInputs();
@@ -237,6 +236,7 @@ function toggleDatePicker (e) {
 
 	if (!checkEventPathForClass(e.path, 'dates')) {
 		dates_element.classList.toggle('active');
+		selected_date_element.value = formatDate(selectedDate);
 		selected_date_element.dataset.value = selectedDate;
 		checkInputs();
 	}
@@ -251,14 +251,17 @@ function checkInputs (e){
         	}
             if (input.value !== ""){
         		input.style.borderColor = 'rgb(129, 129, 129)';
+        		$('.warranty-button').attr('disabled', false);
             }
             };
          	
         	if (input.value == ""){
         		input.style.borderColor = "red";
+        		$('.warranty-button').attr('disabled', true);
         	}
             if (input.value !== ""){
         		input.style.borderColor = 'rgb(129, 129, 129)';
+        		$('.warranty-button').attr('disabled', false);
             }
         });
 }
