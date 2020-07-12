@@ -54,7 +54,7 @@ div.dealers-collections {
     height: 525px;
     padding: 40px 6% 0px 13%;
 }
-h2 {
+h2.aut {
     color: white;
     font-family: 'Teko', sans-serif;
     font-size: 46px;
@@ -148,9 +148,190 @@ div.develic-body a {
 
 color: #F3C440;
 }
+.distributors-body {
+    background-color: #000;
+
+}
+
+
+
+
+
+.accordion {
+    font-size: 1rem;
+    width: 75%;
+    margin: 20px auto 100px auto;
+    border-radius: 5px;
+}
+
+.accordion-header,
+.accordion-body {
+  background: white;
+}
+
+.accordion-header {
+    padding: 0.6em 1.5em;
+    background: #DAAA00;
+    color: #000;
+    cursor: pointer;
+    margin-top: 16px;
+    font-size: 16px;
+    font-family: 'Exo 2', sans-serif;
+    letter-spacing: .1em;
+    font-weight: 800;
+    transition: all .3s;
+    text-transform: uppercase;
+}
+
+
+
+.accordion__item .accordion__item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+
+.accordion-body {
+  background: #000;
+  color: #fff;
+  display: none;
+}
+
+.accordion-body__contents {
+  padding: 1.5em 1.5em;
+  font-size: .85em;
+}
+
+.accordion__item.active:last-child .accordion-header {
+  border-radius: none;
+}
+
+.accordion:first-child > .accordion__item > .accordion-header {
+  border-bottom: 1px solid transparent;
+
+}
+
+.accordion__item > .accordion-header:after {
+  content: "\f107";
+  font-family: fontAwesome ;
+  font-size: 1.2em;
+  float: right;
+  position: relative;
+  top: -2px;
+  transition: .3s all;
+  transform: rotate(0deg);
+}
+
+.accordion__item.active > .accordion-header:after {
+  transform: rotate(-180deg);
+}
+
+
+
+.accordion__item .accordion__item .accordion-header {
+  background: #f1f1f1;
+  color: #353535;
+}
+.grid-item {
+display: inline-grid;
+    width: 32.9%;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 17px;
+    margin-top: 34px;
+   
+}
+
+.grid-item a { 
+     text-decoration: none;
+     color: #fff;
+}
+
+.grid-item a:hover { 
+     text-decoration: none;
+}
+
+
+.grid__item {
+display: inline-grid;
+    width: 32.9%;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 17px;
+    margin-top: 34px;
+   
+}
+
+.grid__item a { 
+     text-decoration: none;
+     color: #fff;
+}
+
+.grid__item a:hover { 
+     text-decoration: none;
+}
+ {
+    display: inline-grid;
+    width: 33%;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 17px;
+    margin-top: 34px;
+   
+}
+
+
+}
+ a { 
+     text-decoration: none;
+     color: #fff;
+}
+
+
+
+.dealers-international--label {
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+h2.label-small {
+
+    margin-top: 40px;
+    font-family: 'Teko', sans-serif;
+    font-size: 45px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 100;
+}
+
+
+
 
 
 @media screen and (max-width: 768px) { 
+    .accordion {
+
+    width: 372px;
+
+}
+.accordion-header {
+        font-size: 14px
+}
+    .grid-item {
+        font-size: 15px;
+            width: 48.9%;
+    }
+    
+   
+    div.table-wrapper {
+    width: 113%;
+    margin-left: -4%;
+    }
+    h2.label-small {
+        font-size: 28px;
+
+    }
+ .grid__item {
+        font-size: 15px;
+            width: 48.9%;
+    }
     .column2 {
 
     margin-top: 0px;
@@ -165,7 +346,7 @@ height: 415px;
     
 
 }
-h2 {
+h2.aut {
 text-align: center;
     font-size: 31px;
 }
@@ -222,6 +403,20 @@ height: 780px;
     margin-left: 15%;
 
 }
+@media screen and (max-width: 500px) {  
+       .accordion {
+
+    width: 85%;
+
+}
+.grid-item {
+        font-size: 13px;
+           
+    }
+    .grid__item {
+        font-size: 13px;
+           
+    }
 }
 
 @media screen and (max-width: 415px) {  
