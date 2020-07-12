@@ -65,22 +65,22 @@ h2.aut {
     display: inline-block;
     width: 24%;
 }
- .column1 {
+.column1 {
 
     margin-top: 30px;
 
-   }
+}
 
-    .column2 {
+.column2 {
 
     margin-top: 55px;
-   }
-   .dealers-online-label {
+}
+.dealers-online-label {
     font-family: 'Teko', sans-serif;
     color: #DAAA00;
     font-size: 20px;
     letter-spacing: 1px;
-   }
+}
 .dealers-text {
     color: #fff;
     font-family: 'Exo2', sans-serif;
@@ -146,7 +146,7 @@ div.develic-body {
 }
 div.develic-body a { 
 
-color: #F3C440;
+    color: #F3C440;
 }
 .distributors-body {
     background-color: #000;
@@ -233,55 +233,55 @@ color: #F3C440;
   color: #353535;
 }
 .grid-item {
-display: inline-grid;
+    display: inline-grid;
     width: 32.9%;
     font-family: 'Exo 2', sans-serif;
     font-size: 17px;
     margin-top: 34px;
-   
+    
 }
 
 .grid-item a { 
-     text-decoration: none;
-     color: #fff;
+   text-decoration: none;
+   color: #fff;
 }
 
 .grid-item a:hover { 
-     text-decoration: none;
+   text-decoration: none;
 }
 
 
 .grid__item {
-display: inline-grid;
+    display: inline-grid;
     width: 32.9%;
     font-family: 'Exo 2', sans-serif;
     font-size: 17px;
     margin-top: 34px;
-   
+    
 }
 
 .grid__item a { 
-     text-decoration: none;
-     color: #fff;
+   text-decoration: none;
+   color: #fff;
 }
 
 .grid__item a:hover { 
-     text-decoration: none;
+   text-decoration: none;
 }
- {
+{
     display: inline-grid;
     width: 33%;
     font-family: 'Exo 2', sans-serif;
     font-size: 17px;
     margin-top: 34px;
-   
+    
 }
 
 
 }
- a { 
-     text-decoration: none;
-     color: #fff;
+a { 
+   text-decoration: none;
+   color: #fff;
 }
 
 
@@ -308,133 +308,133 @@ h2.label-small {
 @media screen and (max-width: 768px) { 
     .accordion {
 
-    width: 372px;
+        width: 372px;
 
-}
-.accordion-header {
+    }
+    .accordion-header {
         font-size: 14px
-}
+    }
     .grid-item {
         font-size: 15px;
-            width: 48.9%;
+        width: 48.9%;
     }
     
-   
+    
     div.table-wrapper {
-    width: 113%;
-    margin-left: -4%;
+        width: 113%;
+        margin-left: -4%;
     }
     h2.label-small {
         font-size: 28px;
 
     }
- .grid__item {
+    .grid__item {
         font-size: 15px;
-            width: 48.9%;
+        width: 48.9%;
     }
     .column2 {
 
-    margin-top: 0px;
-   }
-.dealers-item {
-    width: 135px;
-    margin-left: 21%;
-    margin-top: 45px;
-}
-.addresses {
-height: 415px;
-    
+        margin-top: 0px;
+    }
+    .dealers-item {
+        width: 135px;
+        margin-left: 21%;
+        margin-top: 45px;
+    }
+    .addresses {
+        height: 415px;
+        
 
-}
-h2.aut {
-text-align: center;
-    font-size: 31px;
-}
-div.dealers-search {
-    padding-right: 0px;
-    width: 95%;
-    margin-left: -13px;
+    }
+    h2.aut {
+        text-align: center;
+        font-size: 31px;
+    }
+    div.dealers-search {
+        padding-right: 0px;
+        width: 95%;
+        margin-left: -13px;
 
-}
-div.dealer-body {
-height: 955px;
+    }
+    div.dealer-body {
+        height: 955px;
 
-}
-iframe {
-float: none;
-    width: 95%;
-    margin: 40px 0px -30px 17px;
-    height: 398px;
-}
-.develic-item {
+    }
+    iframe {
+        float: none;
+        width: 95%;
+        margin: 40px 0px -30px 17px;
+        height: 398px;
+    }
+    .develic-item {
 
-    width: 99.5%;
-    margin-top: 9px;
+        width: 99.5%;
+        margin-top: 9px;
 
     }
 
     div.dealers-collections {
 
-height: 780px;
-    padding: 40px 0px;
-}
+        height: 780px;
+        padding: 40px 0px;
+    }
 
- .dealers-online-label {
+    .dealers-online-label {
 
-    font-size: 15px;
+        font-size: 15px;
 
-   }
-.dealers-text {
-    font-size: 13px;
+    }
+    .dealers-text {
+        font-size: 13px;
 
 
-}
-.dealers-link {
+    }
+    .dealers-link {
 
-    padding-bottom: 0px;
-    border-bottom: 1px solid #836600;
+        padding-bottom: 0px;
+        border-bottom: 1px solid #836600;
 
-}
+    }
 }
 
 @media screen and (max-width: 600px) {  
     .dealers-item {
 
-    margin-left: 15%;
+        margin-left: 15%;
 
-}
-@media screen and (max-width: 500px) {  
-       .accordion {
+    }
+    @media screen and (max-width: 500px) {  
+     .accordion {
 
-    width: 85%;
+        width: 85%;
 
-}
-.grid-item {
+    }
+    .grid-item {
         font-size: 13px;
-           
+        
     }
     .grid__item {
         font-size: 13px;
-           
+        
     }
 }
 
 @media screen and (max-width: 415px) {  
     .dealers-item {
 
-    margin-left: 9%;
+        margin-left: 9%;
 
-}
+    }
 
-iframe {
+    iframe {
 
-    margin: 40px 0px -30px 10.5px;
+        margin: 40px 0px -30px 10.5px;
 
-}
+    }
 
-div.dealers-search {
+    div.dealers-search {
 
-    margin-left: -19px;
-}
+        margin-left: -19px;
+    }
 }
 
