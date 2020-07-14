@@ -1,0 +1,83 @@
+<%- include("partials/header") %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/contact.css">
+<header class="contact-page-header">
+	<h1 class="contact-page-title">Contact</h1>
+</header>
+
+<div class="contact-page-content">
+	<p class="contact-page-content-p">Please read the <a href="/pages/faqs" class="underline">FAQ section</a> before sending any questions by email.</p>
+	<p class="contact-page-content-p" id="flash">The following form is for general inquiries only. If you have a warranty question, please visit the <a href="/pages/warranty" class="underline">WARRANTY page.</a></p>
+
+	<div class="errors" >
+            <ul class="ul-register">
+                <li>Please enter all fields</li>
+            </ul>
+     </div>
+     
+      <% if(success && success.length > 0) { %>
+         <div class="success">
+            <ul class="ul-register">
+                <li><%= success %> </li>
+            </ul>
+         </div>
+       <% } %>
+
+	<form action="/pages/contact" method="post">
+		<input class="contact-page-content-input contact-page-content-input-main" type="" name="contact[name]" onchange="checkInputs()" placeholder="Name*">
+	    <input class="contact-page-content-input contact-page-content-input-main" type="email" name="contact[email]" onchange="checkInputs()" placeholder="Email*">
+	    <input class="contact-page-content-input contact-page-content-input-main" type="" name="contact[subject]" onchange="checkInputs()" placeholder="Subject*">
+	    <textarea class="contact-page-content-textarea row-textarea contact-page-content-input-main" name="contact[message]" onchange="checkInputs()" placeholder="Message*"></textarea>
+	    <div class="clickable">
+	    	<button class="contact-button" type="submit"><p class="contact-button-text">Submit</p></button>
+	    </div>
+	    
+	</form>
+	
+	<hr class="contact-page-content-hr">
+	<p class="contact-page-content-p" style="text-align: center; margin-top: 40px; ">40 Greenleaf Street | Rochester, NY 14609 USA | (585) 654-5250 | info@kinkbmx.com</p>
+</div>
+
+
+<script type="text/javascript">
+	const clickable = document.querySelector('.clickable');
+    const errors_div = document.querySelector('.errors');
+    const inputs_main  = document.querySelectorAll(".contact-page-content-input-main");
+
+	clickable.addEventListener('click', showMessage);
+
+	checkInputs();
+
+	function showMessage(e) {
+	errors_div.style.display = "block";
+    window.location = "/pages/contact#flash";
+    }
+    
+    function hideMessage (e) {
+	errors_div.style.display = "none";
+    }
+
+    function checkInputs (e){	
+        
+        inputs_main.forEach((input) => {
+        	input.oninput = function (){
+	        if (input.value == ""){
+        		$('.contact-button').attr('disabled', true);
+        		console.log($('.contact-button'));
+        	}
+            if (input.value !== ""){
+        		$('.contact-button').attr('disabled', false);
+        		clickable.addEventListener('click', hideMessage);
+            }
+            };
+         	
+        	if (input.value == ""){
+        		$('.contact-button').attr('disabled', true);
+        	}
+            if (input.value !== ""){
+        		$('.contact-button').attr('disabled', false);
+        		clickable.addEventListener('click', hideMessage);
+            }
+        });
+}
+</script>
+<%- include("partials/footer") %>
