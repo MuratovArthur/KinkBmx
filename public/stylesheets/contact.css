@@ -1,0 +1,211 @@
+.success{
+        width: 100%;
+        color: #56ad6a;
+        background: #ecfef0;
+        font-family: 'Exo 2', sans-serif;
+        margin: 3% auto; 
+        border: 2px solid #56ad6a;
+    }
+ .errors{
+        width: 100%;
+        color: #d02e2e;
+        background: #fff6f6;
+        font-family: 'Exo 2', sans-serif;
+        margin: 3% auto;
+        border: 2px solid #d02e2e;
+        display: none;
+    }
+    .ul-register{
+        margin: 1%;
+        padding-left: 5%;
+    }
+
+.contact-page-header{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    min-height: 60px;
+    background: #1f1f1f;
+}
+.contact-page-title{
+	margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+.contact-page-content {
+    padding: 10%;
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family: 'Exo 2', sans-serif;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 15px;
+}
+.contact-page-content-li{
+     font-size: 13px;
+     margin-left: 30px; 
+     margin-top: 10px; 
+}
+.contact-page-content-p{
+    margin: 20px auto;
+    font-size: 14px;
+}
+.contact-page-content-hr{
+    margin-top: 2%;
+    border-top: 3px solid #dbaa0c;
+}
+.contact-page-content-h6{
+    color: #daaa00;
+    text-transform: uppercase;
+    margin-bottom: 2%; 
+    margin-top: 2%; 
+}
+.contact-page-content-input{
+    width: 100%;
+    background: #000000;
+    border: 1px solid rgb(129, 129, 129);
+    color: #ffffff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 10px;
+    outline: none;
+    margin: 20px auto;
+}
+
+.contact-page-content-input:hover{
+    border: 1px solid #ffffff;
+}
+.contact-page-content-input::placeholder{
+    color: rgb(129, 129, 129);
+    text-transform: uppercase;
+    margin: 0;
+}
+.contact-page-content-textarea::placeholder{
+    color: rgb(129, 129, 129);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.contact-page-content-textarea{
+    margin: 20px auto;
+    width: 100%;
+    background: #000000;
+    border: 1px solid rgb(129, 129, 129);
+    height: 200px;
+    color: #ffffff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 10px;
+    outline: none;
+}
+.contact-button{
+display: block;
+width: 140px;
+align-self: left;
+background: #000000;
+outline: none;
+border: 3px solid #dbaa0c;
+margin-top: 10px; 
+color: white;
+}
+
+
+
+.contact-button:focus{
+  outline: none;
+}
+
+.contact-button:hover{
+  background: #dbaa0c; 
+  color: black;
+}
+
+.contact-button-text{
+  margin: 0; 
+  text-transform: uppercase;
+  padding: 5%; 
+  font-size: 1.2rem;
+}
+
+a.underline {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #836600;
+    text-decoration: none;
+    color: white;
+
+}
+
+a.underline:hover {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #dbaa0c;
+    text-decoration: none;
+    color: white;
+}
+
+@media only screen and (min-width: 700px){
+.contact-page-content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.contact-page-content-li{
+     font-size: 16px;
+     margin-left: 40px; 
+}
+.contact-page-content {
+    font-size: 20px;
+}
+.contact-page-content-p{
+     font-size: 17px;
+}
+
+
+
+.warranty-page-content-textarea{
+height: 80px;
+
+}
+.row-textarea{
+  margin-bottom: 10px; 
+}
+
+}
+
+@media only screen and (max-width: 699px){
+
+.contact-page-content-input{
+    margin: 10px auto;
+    height: 100%;
+}
+.contact-page-content-textarea{
+    margin: 10px auto;
+    height: 100%;
+}
+.contact-button-text{
+  margin: 0; 
+  text-transform: uppercase;
+  padding: 5%; 
+  font-size: 14px;
+}
+.contact-button{
+width: 100px;
+margin-bottom: 20px; 
+}
+.contact-page-content-hr{
+  margin-top: 10px; 
+  margin-bottom: 0;
+}
+
+.ul-register{
+  margin-left: 0;
+  list-style: none; 
+}
+
+
+}
