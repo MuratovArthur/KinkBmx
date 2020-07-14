@@ -1,5 +1,234 @@
 <%- include("partials/header") %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/bikes.css">
 
-<h1>THIS IS A BIKES PAGE!!!</h1>
+<div class="bikes-body">
+	
+<div class="ui breadcrumb">
+  <a href="/" class="section">Home</a>
+  <div class="divider"> / </div>
+  <br>
+  <div class="active section">BIKES</div>
+</div>
+
+<div class="main-content"> 
+
+
+	<div class="accordion js-accordion">
+  <div class="accordion__item js-accordion-item">
+  	<hr>
+    <div class="accordion-header js-accordion-header">MODEL YEAR</div> 
+  <div class="accordion-body js-accordion-body">
+    <div class="accordion-body__contents">
+            <div class="checkbox">
+                 <input type="checkbox">
+                 <label >2020</label>
+
+         </div>
+
+           <div class="checkbox">
+                 <input type="checkbox">
+                 <label>2021</label>
+         </div>
+    </div>
+    
+    </div
+    </div>
+  </div>
+  <div class="accordion__item js-accordion-item active">
+  	<hr>
+    <div class="accordion-header js-accordion-header">WHEEL SIZE</div> 
+  <div class="accordion-body js-accordion-body">
+    <div class="accordion-body__contents">
+        <div class="checkbox">
+                 <input type="checkbox">
+                 <label>12"</label>
+         </div>
+          <div class="checkbox">
+                 <input type="checkbox">
+                 <label>14"</label>
+         </div>
+          <div class="checkbox">
+                 <input type="checkbox">
+                 <label>16"</label>
+         </div>
+          <div class="checkbox">
+                 <input type="checkbox">
+                 <label>18"</label>
+         </div>
+          <div class="checkbox">
+                 <input type="checkbox">
+                 <label>20"</label>
+         </div>
+          <div class="checkbox">
+                 <input type="checkbox">
+                 <label>26"</label>
+         </div>
+    </div>
+     
+    </div>
+  </div>    <div class="accordion__item js-accordion-item">
+    	<hr>
+    <div class="accordion-header js-accordion-header">TOP TUBE SIZE</div> 
+  <div class="accordion-body js-accordion-body">
+    <div class="accordion-body__contents">
+        <div class="checkbox">
+                 <input type="checkbox">
+                 <label>20.0"</label>
+         </div>
+         <div class="checkbox">
+                 <input type="checkbox">
+                 <label>20.25"</label>
+         </div>
+         <div class="checkbox">
+                 <input type="checkbox">
+                 <label>20.5"</label>
+         </div>
+          <div class="checkbox">
+                 <input type="checkbox">
+                 <label>20.75"</label>
+         </div>
+          <div class="checkbox">
+                 <input type="checkbox">
+                 <label>21.0"</label>
+         </div>
+
+    </div>
+      
+    </div>
+  </div>
+    
+    
+ 
+  </div>
+</div>
+   
+
+
+
+
+<div class="bikes-collection">   
+   <div class="bikes-inform"> 
+	<h5 class="count-of-products"> 33 products </h5>
+	  <select name="cont" class="ui dropdown" id="sort">
+                <option value=""> Sort</option>
+                <option value=""> Featured</option>
+                <option value="">Best selling</option>
+                <option value=""> Alphabetically, A-Z</option>
+                <option value="">Alphabetically, Z-A</option>
+                <option value="">Price, low to high</option>
+                <option value="">Price, high to low</option>
+                <option value="">Date, old to new</option>
+                <option value="">date, new to old</option>
+
+              </select>
+    </div>
+<div class="row row-cols-1 row-cols-md-3">
+
+
+  <div class="col mb-4">
+ <div class="card">
+ 	  <div class="card-img-overlay">
+    <h5 class="card-title">Available At Dealers</h5>
+</div>
+   <a href="#">  <img src="https://cdn.shopify.com/s/files/1/0027/8645/9757/products/Coast2021_540x.jpg?v=1585854775" class="card-img-top" alt="..."> </a>
+   
+   <div class="card-body card-body-bike">
+  
+     <p class="card-text">COAST 12" 2021
+</p>
+     <p class="card-text"><small class="price">$149.99</small></p>
+   </div>
+ </div>
+ </div>
+  <div class="col mb-4">
+ <div class="card">
+ 	 <div class="card-img-overlay">
+    <h5 class="card-title">Available At Dealers</h5>
+</div>
+   <a href="#"> <img src="https://cdn.shopify.com/s/files/1/0027/8645/9757/products/roaster2021_540x.jpg?v=1585855594" class="card-img-top" alt="...">  </a>
+   
+   <div class="card-body card-body-bike">
+
+     <p class="card-text">ROASTER 12" 2021
+</p>
+     <p class="card-text"><small class="price">$199.99</small></p>
+   </div>
+ </div>
+</div>
+<div class="col mb-4">
+ <div class="card">
+ 	 <div class="card-img-overlay">
+    <h5 class="card-title">Available At Dealers</h5>
+</div>
+   <a href="#"> 
+
+    <img src="https://cdn.shopify.com/s/files/1/0027/8645/9757/products/pump2021_540x.jpg?v=1585855555" class="card-img-top" alt="...">
+    </a>
+   <div class="card-body card-body-bike">
+     
+     <p class="card-text">PUMP 14" 2021
+</p>
+     <p class="card-text"><small class="price">$259.99</small></p>
+   </div>
+ </div>
+</div>
+<div class="col mb-4">
+ <div class="card">
+ 	 <div class="card-img-overlay">
+    <h5 class="card-title">Available At Dealers</h5>
+</div>
+   <a href="#">  
+
+    <img src="https://cdn.shopify.com/s/files/1/0027/8645/9757/products/Carve2021_540x.jpg?v=1586210361" class="card-img-top" alt="...">
+   </a>
+   <div class="card-body card-body-bike">
+     
+     <p class="card-text">CARVE 16" 2021
+
+</p>
+     <p class="card-text"><small class="price">$319.99</small></p>
+   </div>
+ </div>
+</div>
+<div class="col mb-4">
+ <div class="card">
+ 	 <div class="card-img-overlay">
+    <h5 class="card-title">Available At Dealers</h5>
+</div>
+   <a href="#">  
+
+    <img src="https://cdn.shopify.com/s/files/1/0027/8645/9757/products/kicker2021_540x.jpg?v=1585855334" class="card-img-top" alt="...">
+   </a>
+   <div class="card-body card-body-bike">
+     
+     <p class="card-text">KICKER 18" 2021
+
+</p>
+     <p class="card-text"><small class="price">$319.99</small></p>
+   </div>
+ </div>
+</div>
+<div class="col mb-4">
+  <div class="card">
+  	 <div class="card-img-overlay">
+    <h5 class="card-title">Available At Dealers</h5>
+</div>
+   <a href="#"> 
+
+    <img src="https://cdn.shopify.com/s/files/1/0027/8645/9757/products/Curb2021black_540x.jpg?v=1585854929" class="card-img-top" alt="...">
+    </a>
+   <div class="card-body card-body-bike">
+     
+     <p class="card-text">CURB 2021
+
+</p>
+     <p class="card-text"><small class="price">$289.99</small></p>
+   </div>
+ </div>
+</div>
+
+</div>
+</div>
+</div>
 <%- include("partials/footer") %>
 
