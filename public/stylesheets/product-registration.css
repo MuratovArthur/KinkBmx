@@ -1,0 +1,284 @@
+.product-registration-page-header{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    min-height: 60px;
+    background: #1f1f1f;
+}
+.product-registration-page-title{
+	margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+.product-registration-page-content {
+    padding: 10%;
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family: 'Exo 2', sans-serif;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 15px;
+}
+.product-registration-page-content-li{
+     font-size: 13px;
+     margin-left: 30px; 
+     margin-top: 10px; 
+}
+.product-registration-page-content-p{
+    margin-left: 10%; 
+    font-size: 13px;
+    margin-bottom: 0; 
+}
+.product-registration-page-content-hr{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-top: 1px solid #313131;
+}
+.product-registration-page-content-h6{
+    color: #daaa00;
+    text-transform: uppercase;
+    margin-bottom: 2%; 
+    margin-top: 2%; 
+}
+.product-registration-page-content-input{
+    width: 100%;
+    background: #000000;
+    border: 1px solid rgb(129, 129, 129);
+    height: 100%;
+    color: #ffffff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    padding: 6px;
+    padding-left: 10px;
+    outline: none;
+}
+
+.product-registration-page-content-input:hover{
+    border: 1px solid #ffffff;
+}
+.product-registration-page-content-input::placeholder{
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+}
+.product-registration-page-content-col-md-6{
+    margin: 10px 0;
+    padding: 0;
+} 
+.product-registration-page-content-col-md-12{
+     margin-bottom: 20px;
+     padding: 0;
+}
+.product-registration-page-content-textarea{
+    width: 100%;
+    background: #000000;
+    border: 1px solid rgb(129, 129, 129);
+    height: 100%;
+    color: #ffffff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    padding: 6px;
+    padding-left: 10px;
+    outline: none;
+}
+.product-registration-button{
+display: block;
+width: 140px;
+align-self: left;
+background: #000000;
+outline: none;
+border: 3px solid #dbaa0c;
+margin-top: 10px; 
+}
+
+.product-registration-page-content-p{
+ font-size: 14px;
+ margin: 40px 0;
+}
+
+
+.product-registration-button:focus{
+  outline: none;
+}
+.product-registration-button-upload:focus{
+  outline: none;
+}
+.product-registration-button-text{
+  margin: 0; 
+  text-transform: uppercase;
+  padding: 5%; 
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+.btn-tertiary{
+  color: #555; 
+  padding: 0;
+  line-height: 40px;
+  width: 140px;
+  align-self: left;
+  display: block;
+  border: 1px solid rgb(129, 129, 129);
+  margin: 20px 0;
+}
+
+.product-registration-page-content-h2{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+}
+
+.input-file{ width:.1px;height:.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1}
+.input-file + .js-labelFile{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 10px;cursor:pointer}
+
+ 
+
+
+
+
+@media only screen and (min-width: 700px;){
+.product-registration-page-content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.product-registration-page-content-li{
+     font-size: 16px;
+     margin-left: 40px; 
+}
+.product-registration-page-content {
+    font-size: 20px;
+}
+.product-registration-page-content-p{
+     font-size: 16px;
+}
+.product-registration-page-content-h6{
+    font-size: 18px;
+}
+.product-registration-page-content-col-md-12{
+    margin: 10px 0;
+    padding: 0px;
+}
+.product-registration-page-content-p{
+ font-size: 16px;
+}
+.warranty-page-content-textarea{
+height: 80px;
+
+}
+.row-textarea{
+  margin-bottom: 60px; 
+}
+}
+
+@media only screen and (max-width: 699px;){
+.product-registration-page-content-col-md-6{
+    margin: 2% 0;
+    padding: 0;
+    height: 30px;
+}
+.col-md-6{
+      padding-left: 0px;
+}
+.product-registration-page-content-col-md-12{
+    margin: 2% 0;
+    padding: 0;
+    height: 30px;
+}
+.product-registration-page-content-input{
+    font-size: 14px;
+}
+.product-registration-button-text{
+  margin: 0; 
+  text-transform: uppercase;
+  padding: 5%; 
+  font-size: 14px;
+  color: #ffffff;
+}
+.product-registration-button{
+width: 100px;
+
+}
+.product-registration-button-upload{
+width: 100px;
+
+}
+.btn-tertiary{
+  width: 140px;
+  height: 30px;
+}
+span.product-registration-button-text{
+  padding: 0;
+  position: relative;
+  bottom: 20%;
+}
+}
+
+
+
+
+.date-picker .dates {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: black;
+  color: white;
+   border: 2px solid #EEE;
+   font-weight: bold;
+}
+
+.date-picker .dates.active {
+  display: block;
+  width: 93.5%;
+  margin: 0 auto;
+}
+
+.date-picker .dates .month {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #EEE;
+}
+
+.date-picker .dates .month .arrows {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #dbaa0c;
+  font-size: 20px;
+}
+
+.date-picker .dates .month .arrows:hover {
+  user-select: none;
+}
+
+.date-picker .dates .month .arrows:active {
+  background-color: #dbaa0c;
+  color: black;
+}
+
+.date-picker .dates .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 200px;
+}
+.date-picker .dates .days .day { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 1px solid rgb(129, 129, 129);
+}
+.date-picker .dates .days .day.selected {
+  background-color: #dbaa0c;
+  color: black;
+}
+
