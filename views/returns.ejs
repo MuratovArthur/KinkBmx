@@ -58,6 +58,14 @@
             </ul>
          </div>
 
+          <% if(success && success.length > 0) { %>
+         <div class="success">
+            <ul class="ul-register">
+                <li><%= success %> </li>
+            </ul>
+         </div>
+       <% } %>
+
 
 	<form action="/pages/returns" method="post">
 	<h6 class="returns-page-content-h6">Customer Info</h6>
@@ -134,6 +142,7 @@
 </div>
 </form>
 
+
 <script type="text/javascript">
 const date_picker_element = document.querySelector('.date-picker');
 const selected_date_element = document.querySelector('.selected-date');
@@ -170,6 +179,15 @@ populateDates();
  checkInputs();
 
 // EVENT LISTENERS
+
+$('#fileOne').change(function() {
+  $('.returns-button-text-upload-one').html('File Uploaded');
+});
+
+$('#fileTwo').change(function() {
+  $('.returns-button-text-upload-two').html('File Uploaded');
+});
+
 clickable.addEventListener('click', showMessage);
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
@@ -191,6 +209,10 @@ function toggleDatePicker (e) {
 	}
 }
 
+function hideMessage (e) {
+	errors_div.style.display = "none";
+}
+
 function checkInputs (e){	
         
         inputs_main.forEach((input) => {
@@ -201,6 +223,7 @@ function checkInputs (e){
             if (input.value !== ""){
         		input.style.borderColor = 'rgb(129, 129, 129)';
         		$('.returns-button').attr('disabled', false);
+        		clickable.addEventListener('click', hideMessage);
             }
             };
          	
@@ -211,6 +234,7 @@ function checkInputs (e){
             if (input.value !== ""){
         		input.style.borderColor = 'rgb(129, 129, 129)';
         		$('.returns-button').attr('disabled', false);
+        		clickable.addEventListener('click', hideMessage);
             }
         });
 }

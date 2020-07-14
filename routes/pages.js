@@ -7,16 +7,17 @@ const path = require('path');
 var Return  = require("../models/return");
 var Warranty  = require("../models/warranty");
 
-var Storage= multer.diskStorage({
+var storage= multer.diskStorage({
   destination:"./public/uploads/",
   filename:(req,file,cb)=>{
     cb(null,file.fieldname+"_"+Date.now()+path.extname(file.originalname));
   }
 });
 
-var upload = multer({
-  storage:Storage
-}).single('img');
+const upload = multer({
+  storage: storage,
+  limits:{fileSize: 10000000}
+});
 
 
 
@@ -103,8 +104,8 @@ router.post("/returns", function(req, res){
       if(err){
           console.log(err);
       }else{
-         res.redirect("/");
-         console.log(req.body.return);
+        req.flash('success', 'Thank you! The form was submitted successfully.');
+        return res.redirect('/pages/returns#error');
       }
     });
   } 
@@ -114,11 +115,23 @@ router.get("/warranty", function(req,res) {
    res.render("warranty");
 });
 
-router.post("/warranty", upload,  function(req, res){
-   const  { firstName, lastName, streetAdress, city, state, zip, country, email, phoneNumber, product, bikeShop, assembledBy, issue} = req.body.warranty;
-   const  img  = req.file.filename;
+router.post("/warranty", upload.fields([{
+           name: 'purchasePhoto', maxCount: 1
+         }, {
+           name: 'defectPhoto', maxCount: 1
+         }]),  function(req, res){
+    const  { firstName, lastName, streetAdress, city, state, zip, country, email, phoneNumber, product, bikeShop, assembledBy, issue} = req.body.warranty;
 
-   var newWarranry = { img: img, firstName: firstName, lastName: lastName, streetAdress: streetAdress, city: city, state: state, zip: zip, country: country, email: email, phoneNumber: phoneNumber, product: product, bikeShop: bikeShop, assembledBy: assembledBy, issue: issue };
+    if (typeof files === 'undefined') {
+          var  purchasePhoto  = '';
+          var  defectPhoto  = '';
+  } else {
+    const  purchasePhoto  = req.files.purchasePhoto[0].filename;
+    const  defectPhoto  = req.files.defectPhoto[0].filename;
+  }
+    
+
+   var newWarranry = { purchasePhoto: purchasePhoto,defectPhoto: defectPhoto, firstName: firstName, lastName: lastName, streetAdress: streetAdress, city: city, state: state, zip: zip, country: country, email: email, phoneNumber: phoneNumber, product: product, bikeShop: bikeShop, assembledBy: assembledBy, issue: issue};
    
   if ( !firstName || !lastName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !product || !bikeShop || !assembledBy ) {
     req.flash('error', 'Please enter all of first four fields with "*"');
@@ -128,7 +141,8 @@ router.post("/warranty", upload,  function(req, res){
       if(err){
           console.log(err);
       }else{
-         res.redirect("/");
+         req.flash('success', 'Thank you! The form was submitted successfully.');
+         return res.redirect('/pages/warranty#error');
          console.log(newWarranry);
       }
     });

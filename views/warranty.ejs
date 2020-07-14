@@ -74,8 +74,15 @@
             <ul class="ul-register">
                 <li>Please enter all of first four fields with "*"</li>
             </ul>
+     </div>
+     
+      <% if(success && success.length > 0) { %>
+         <div class="success">
+            <ul class="ul-register">
+                <li><%= success %> </li>
+            </ul>
          </div>
-
+       <% } %>
 
        <form action="/pages/warranty" method="post" enctype="multipart/form-data">
 	<b>Warranty Claim Form</b>
@@ -164,18 +171,18 @@
 	<h6 class="warranty-page-content-h6">UPLOAD PROOF OF PURCHASE OR RECEIPT (SCAN OR MOBILE PHOTO)</h6>
 	<div class="form-group">
   	 
-    <input type="file" name="img" id="file" class="input-file">
-    <label for="file" class="btn btn-tertiary js-labelFile">
-      <span class="warranty-button-text warranty-button-text-upload">Upload file</span>
+    <input type="file" name="purchasePhoto" id="fileOne" class="input-file">
+    <label for="fileOne" class="btn label-upload">
+      <span class="warranty-button-text warranty-button-text-upload-one">Upload file</span>
     </label>
    
   </div>
 	<h6 class="warranty-page-content-h6">UPLOAD PRODUCT IMAGES, INCLUDING IMAGES OF DEFECTS</h6>
 	<div class="form-group">
   	
-    <input type="file" name="img" id="file" class="input-file">
-    <label for="file" class="btn btn-tertiary js-labelFile">
-      <span class="warranty-button-text">Upload file</span>
+    <input type="file" name="defectPhoto" id="fileTwo" class="input-file">
+    <label for="fileTwo" class="btn label-upload">
+      <span class="warranty-button-text warranty-button-text-upload-two">Upload file</span>
     </label>
     
 
@@ -226,6 +233,15 @@ populateDates();
  checkInputs();
 
 // EVENT LISTENERS
+
+$('#fileOne').change(function() {
+  $('.warranty-button-text-upload-one').html('File Uploaded');
+});
+
+$('#fileTwo').change(function() {
+  $('.warranty-button-text-upload-two').html('File Uploaded');
+});
+
 clickable.addEventListener('click', showMessage);
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
@@ -236,6 +252,8 @@ function showMessage(e) {
 	errors_div.style.display = "block";
 	window.location = "/pages/warranty#error";
 }
+
+
 
 function toggleDatePicker (e) {
 

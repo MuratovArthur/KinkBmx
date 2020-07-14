@@ -1,4 +1,11 @@
-
+.success{
+        width: 100%;
+        color: #56ad6a;
+        background: #ecfef0;
+        font-family: 'Exo 2', sans-serif;
+        margin: 3% auto; 
+        border: 2px solid #56ad6a;
+    }
  .errors{
         width: 100%;
         color: #d02e2e;
@@ -123,7 +130,7 @@ margin-top: 10px;
   font-size: 1.2rem;
   color: #ffffff;
 }
-.btn-tertiary{
+.label-upload{
   color: #555; 
   padding: 0;
   line-height: 40px;
@@ -136,14 +143,14 @@ margin-top: 10px;
 
 
 .input-file{ width:.1px;height:.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1}
-.input-file + .js-labelFile{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 10px;cursor:pointer}
+
 
  
 
 
 
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 700px){
 .warranty-page-content {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -167,14 +174,14 @@ margin-top: 10px;
 
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 699px){
 .warranty-page-content-col-md-6{
-    margin: 2% 0;
+    margin: 3% 0;
     padding: 0;
     height: 30px;
 }
 .warranty-page-content-col-md-12{
-      margin: 2% 0;
+      margin: 3% 0;
     padding: 0;
     height: 30px;
 }
@@ -196,7 +203,7 @@ width: 100px;
 width: 100px;
 
 }
-.btn-tertiary{
+.label-upload{
   width: 140px;
   height: 30px;
 }
@@ -204,6 +211,13 @@ span.warranty-button-text{
   padding: 0;
   position: relative;
   bottom: 20%;
+}
+.ul-register{
+  margin-left: 0;
+  list-style: none; 
+}
+.warranty-page-content-textarea{
+height: 35px;
 }
 }
 

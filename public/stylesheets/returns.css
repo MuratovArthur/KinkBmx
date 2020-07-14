@@ -1,3 +1,11 @@
+.success{
+        width: 100%;
+        color: #56ad6a;
+        background: #ecfef0;
+        font-family: 'Exo 2', sans-serif;
+        margin: 3% auto; 
+        border: 2px solid #56ad6a;
+    }
     .errors{
         width: 100%;
         color: #d02e2e;

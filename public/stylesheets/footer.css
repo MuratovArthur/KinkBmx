@@ -53,7 +53,7 @@
 .ul4{
   margin: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 759px) {
    .col-2{
     display: none;
    }
@@ -91,7 +91,7 @@
   }
 
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 760px) {
  .col-icon{
   display: none;
  }
