@@ -199,12 +199,9 @@ margin-top: 10px;
 width: 100px;
 
 }
-.warranty-button-upload{
-width: 100px;
 
-}
 .label-upload{
-  width: 140px;
+  width: 120px;
   height: 30px;
 }
 span.warranty-button-text{
@@ -216,8 +213,12 @@ span.warranty-button-text{
   margin-left: 0;
   list-style: none; 
 }
-.warranty-page-content-textarea{
-height: 35px;
+    .warranty-page-content-textarea{
+height: 80px;
+
+}
+.row-textarea{
+  margin-bottom: 60px; 
 }
 }
 

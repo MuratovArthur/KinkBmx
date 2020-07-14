@@ -450,7 +450,7 @@ border: none;
 #footer-logo-img{
 width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 699px) {
 
 
 .carousel-indicators li {
@@ -461,10 +461,9 @@ width: 100%;
 display: none;
 }
 .col-10{
-padding: 0; 
+padding: 5% 0; 
 width: 100%;
 margin: 0 auto;
-padding-top: 5%;
 }
 .fa-arrow-down{
 padding-left: 89%;
@@ -491,12 +490,15 @@ margin: 0;
 }
 
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 700px) {
 .col-icon{
 display: none;
 }
 #input-email{
 width: 88%;
+}
+.site-footer{
+padding-bottom: 20px; 
 }
 }
 
@@ -1041,9 +1043,7 @@ font-family: 'Teko', sans-serif;
 font-weight: 700;
 text-align: center;
 text-transform: uppercase;
-font-size: 80px;
-line-height:  84px;
-letter-spacing: 0.01em;
+letter-spacing: 0.04em;
 margin-top: 5%; 
 margin-bottom: 5%; 
 }
@@ -1057,7 +1057,7 @@ font-weight: 300;
 text-transform: uppercase;
 text-align: center;
 letter-spacing: 0.08em;
-font-size: 34px;
+font-size: 2vw;
 margin-top: 6%; 
 }
 .team-img{
@@ -1104,24 +1104,25 @@ background: #dbaa0c;
 .team-button-text:hover{
   color: #000000;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 699px) {
 
 .col-12.col-md-4{
 display: none;
 }
 .team-header{
-font-size: 40px;
+font-size: 56px;
 }
 .team-name{
 display: none;
+} 
 }
 
 
-@media screen and (max-width: 769px) {
+@media screen and (min-width: 700px) {
 .team-img{
   display: block;
   margin: 0 auto;
-width: 100%; 
+width: 70%; 
 height: auto;
   border: 3px solid #dbaa0c;
 }
@@ -1129,8 +1130,8 @@ height: auto;
 font-size: 10px;
 }
 .team-header{
-
-margin-bottom: 1%; 
+font-size: 6vw;
+margin: 5% auto; 
 }
 }
 

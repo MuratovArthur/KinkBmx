@@ -127,7 +127,7 @@ margin-top: 10px;
 
 
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 700px){
 .returns-page-content {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -151,7 +151,7 @@ margin-top: 10px;
 
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 699px){
 .returns-page-content-col-md-6{
     margin: 2% 0;
     padding: 0;
@@ -184,6 +184,13 @@ width: 100px;
          padding-left: 8%;
          margin: 2%;
     }
+    .returns-page-content-textarea{
+height: 80px;
+
+}
+.row-textarea{
+  margin-bottom: 60px; 
+}
 }
 
 
