@@ -6,6 +6,7 @@ const multer = require('multer');
 const path = require('path');
 var Return  = require("../models/return");
 var Warranty  = require("../models/warranty");
+var Contact  = require("../models/contact");
 
 var storage= multer.diskStorage({
   destination:"./public/uploads/",
@@ -97,7 +98,7 @@ router.get("/returns", function(req,res) {
 router.post("/returns", function(req, res){
    const  { order, firstName, secondName, streetAdress, city, state, zip, country, email, phoneNumber, item} = req.body.return;
   if ( !order || !firstName || !secondName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !item) {
-    req.flash('error', 'Please enter all of first four fields with "*"');
+    req.flash('error', 'Please enter all of the fields with "*"');
     return res.redirect('/pages/returns#error');
   } else{
     Return.create(req.body.return, function(err, newReturn){
@@ -134,10 +135,10 @@ router.post("/warranty", upload.fields([{
    var newWarranry = { purchasePhoto: purchasePhoto,defectPhoto: defectPhoto, firstName: firstName, lastName: lastName, streetAdress: streetAdress, city: city, state: state, zip: zip, country: country, email: email, phoneNumber: phoneNumber, product: product, bikeShop: bikeShop, assembledBy: assembledBy, issue: issue};
    
   if ( !firstName || !lastName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !product || !bikeShop || !assembledBy ) {
-    req.flash('error', 'Please enter all of first four fields with "*"');
+    req.flash('error', 'Please enter all of the fields with "*"');
     return res.redirect('/pages/warranty#error');
   } else{
-    Warranty.create(newWarranry, function(err, newReturn){
+    Warranty.create(newWarranry, function(err, newWarranry){
       if(err){
           console.log(err);
       }else{
@@ -149,6 +150,32 @@ router.post("/warranty", upload.fields([{
   } 
 });
 
+router.get("/product-registration", function(req,res) {
+   res.render("product-registration");
+});
+
+router.get("/contact", function(req,res) {
+   res.render("contact");
+});
+
+
+router.post("/contact", function(req, res){
+   const  { name, email, subject, message} = req.body.contact;
+  if ( !name || !email || !subject || !message) {
+    req.flash('error', 'Please enter all fieds');
+    return res.redirect('/pages/contact');
+  } else{
+    Contact.create(req.body.contact, function(err, newContact){
+      if(err){
+          console.log(err);
+      }else{
+        console.log(req.body.contact);
+        req.flash('success', "Thanks for contacting us. We'll get back to you as soon as possible.");
+        return res.redirect('/pages/contact');
+      }
+    });
+  } 
+});
 
 
 
