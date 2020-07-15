@@ -60,6 +60,8 @@
    }
    .col-10{
     padding-top: 0; 
+    padding-left: 2%;
+    padding-right: 0;  
     width: 100%;
     margin: 5% auto;
    }
@@ -92,6 +94,7 @@
   }
 
 }
+
 @media screen and (min-width: 760px) {
  .col-icon{
   display: none;
