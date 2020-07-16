@@ -286,7 +286,7 @@ button#shop.ui.icon.button {
 
 }
 div.form {
-  top: 124px;
+  top: -66px;
 }
 }
 @media screen and (max-width:900px) {
@@ -374,8 +374,8 @@ left: 94%;
 
 }
 .search.active .icon {
-  left: 91%;
-  margin-top: -402px;
+left: 91%;
+    margin-top: -169px;
 }
 
 div.search {
