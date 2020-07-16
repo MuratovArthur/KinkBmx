@@ -10,73 +10,89 @@
 	<h2 class="product-registration-page-content-h2"><b>REGISTRATION DETAILS</b></h2>
 	<p class="product-registration-page-content-p">Thanks for choosing Kink BMX! If you purchased a new Kink BMX complete bike, frame, fork, handlebar, or crank set you must register it here to validate your product-registration. You may also register by mail if a product-registration registration card was included with your product. Please be sure to fill out all details accurately, and we will send you a free Kink BMX sticker pack by mail upon registration.</p>
 	<p class="product-registration-page-content-p"><b>Please Note:</b> For complete bikes and aftermarket frames, the serial number is located underneath the bottom bracket. Fork serial numbers are located on the steerer tube. Handlebar serial numbers are located on the grip area of the bar. Crank serial numbers are located near the sprocket bolt hole.</p>
-	<hr class="product-registration-page-content-hr">
-	<b>REGISTRATION FORM</b>
+	<hr class="product-registration-page-content-hr" id="flash">
+
+    <div class="errors" >
+            <ul class="ul-register">
+                <li>Please enter all of fields with "*"</li>
+            </ul>
+     </div>
+     
+      <% if(success && success.length > 0) { %>
+         <div class="success">
+            <ul class="ul-register">
+                <li><%= success %> </li>
+            </ul>
+         </div>
+       <% } %>
+
+	<form action="/pages/product-registration" method="post">
+	<h2 class="product-registration-page-content-h2"><b >REGISTRATION FORM</b></h2>
 	<h6 style="margin-top: 40px;" class="product-registration-page-content-h6">Rider Info</h6>
 	<div class="row">
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="First Name*">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" type="" name="product[firstName]" placeholder="First Name*">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Last Name*">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" type="" name="product[lastName]" placeholder="Last Name*">
 		</div>
-		<div class="col-md-12 product-registration-page-content-col-md-12" style="padding: 0; margin: 2% 0;">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Street Adress*">
+		<div class="col-md-12 product-registration-page-content-col-md-12">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" type="" name="product[streetAdress]" placeholder="Street Adress*">
 		</div>
-		<div class="col-md-12 product-registration-page-content-col-md-12" style="padding: 0; margin: 2% 0;">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Street Adress Line 2">
-		</div>
-		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" name="" placeholder="City*">
+		<div class="col-md-12 product-registration-page-content-col-md-12">
+			<input class="product-registration-page-content-input" type="" name="product[streetAdressLine]" placeholder="Street Adress Line 2">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="State/Province*">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" name="product[city]" placeholder="City*">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="ZIP/Postal code*">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" type="" name="product[state]" placeholder="State/Province*">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Country*">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" type="" name="product[zip]" placeholder="ZIP/Postal code*">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Email*">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" type="" name="product[country]" placeholder="Country*">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Phone Number*">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" type="email" name="product[email]" placeholder="Email*">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Age of rider*">
+			<input class="product-registration-page-content-input" type="" name="product[phoneNumber]" placeholder="Phone Number">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Number of years riding bmx*">
+			<input class="product-registration-page-content-input" type="" name="product[age]" placeholder="Age of rider">
+		</div>
+		<div class="col-md-6 product-registration-page-content-col-md-6">
+			<input class="product-registration-page-content-input" type="" name="product[yearsRiding]" placeholder="Number of years riding bmx">
 		</div>
 	</div>
 		<h6 class="product-registration-page-content-h6">Product Details</h6>
 	<div class="row">
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" name="" placeholder="Product (Ex. Titan II Frame)">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" name="product[product]" placeholder="Product (Ex. Titan II Frame)*">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Model year (yyyy)">
+			<input class="product-registration-page-content-input" type="" name="product[modelYear]" placeholder="Model year (yyyy)">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Color (Ex. Black)">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" type="" name="product[color]" placeholder="Color (Ex. Black)*">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Size (Ex. 20.5in / 175mm)">
+			<input class="product-registration-page-content-input" type="" name="product[size]" placeholder="Size (Ex. 20.5in / 175mm)">
 		</div>
-		<div class="col-md-12 product-registration-page-content-col-md-12" style="padding: 0;">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Serial number or date code (bikes, frames, forks, bars, cranks only)">
+		<div class="col-md-12 product-registration-page-content-col-md-12">
+			<input class="product-registration-page-content-input" type="" name="product[serialNumber]" placeholder="Serial number or date code (bikes, frames, forks, bars, cranks only)">
 		</div>
 	</div>
 	<h6 class="product-registration-page-content-h6">PURCHASE & ASSEMBLY DETAILS</h6>
 	<div class="row">
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" name="" placeholder="Bike Shop or online retailer*">
+			<input class="product-registration-page-content-input product-registration-page-page-content-input-main" name="product[bikeShop]" placeholder="Bike Shop or online retailer*">
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
 			<div class="date-picker">
-			<input class="product-registration-page-content-input selected-date" name="" placeholder="Date (dd/mm/yyyy)*" disabled>
+			<input class="product-registration-page-content-input selected-date product-registration-page-page-content-input-main" name="product[purchaseDate]" placeholder="PURCHASE date" disabled>
 			    <div class="dates">
 
 			    <div class="month">
@@ -91,16 +107,21 @@
 		    </div>
 		</div>
 		<div class="col-md-6 product-registration-page-content-col-md-6">
-			<input class="product-registration-page-content-input" type="" name="" placeholder="Assembled by myself/ bike shop">
+			<input class="product-registration-page-content-input" type="" name="product[assembledBy]" placeholder="Assembled by myself/ bike shop">
 		</div>
 	</div>
 	<h6 class="product-registration-page-content-h6">Product Details</h6>
 	<div class="row row-textarea">
-		<div class="col-md-12 product-registration-page-content-col-md-12" style="padding: 0;  margin: 2% 0;">
-			<textarea class="product-registration-page-content-textarea" ></textarea>
+		<div class="col-md-12 product-registration-page-content-col-md-12">
+			<textarea name="product[details]" class="product-registration-page-content-textarea"></textarea>
 		</div>
 	</div>
-	<button class="product-registration-button" type="submit"><p class="product-registration-button-text">Submit</p></button>
+	<div class="clickable">
+		<button class="product-registration-button" type="submit"><p class="product-registration-button-text">Submit</p></button>
+	</div>
+	
+
+   </form>
 
    
 
@@ -116,6 +137,13 @@ const mth_element = document.querySelector('.date-picker .dates .month .mth');
 const next_mth_element = document.querySelector('.date-picker .dates .month .next-mth');
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
+const inputs_main  = document.querySelectorAll(".product-registration-page-page-content-input-main");
+const submit_btn = document.querySelector('.product-registration-page-button');
+const clickable = document.querySelector('.clickable');
+const errors_div = document.querySelector('.errors');
+
+
+
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -132,22 +160,65 @@ let selectedYear = year;
 mth_element.textContent = months[month] + ' ' + year;
 
 
-selected_date_element.dataset.value = selectedDate;
 
 populateDates();
+ checkInputs();
 
 // EVENT LISTENERS
+
+
+
+clickable.addEventListener('click', showMessage);
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPrevMonth);
 
 // FUNCTIONS
+function showMessage(e) {
+	errors_div.style.display = "block";
+	window.location = "/pages/product-registration#flash";
+}
+
+
+
 function toggleDatePicker (e) {
 
 	if (!checkEventPathForClass(e.path, 'dates')) {
 		dates_element.classList.toggle('active');
-		selected_date_element.value = formatDate(date);
+		selected_date_element.value = formatDate(selectedDate);
+        selected_date_element.dataset.value = selectedDate;
+		checkInputs();
 	}
+}
+
+function hideMessage (e) {
+	errors_div.style.display = "none";
+}
+
+function checkInputs (e){	
+        
+        inputs_main.forEach((input) => {
+        	input.oninput = function (){
+	        if (input.value == ""){
+        		input.style.borderColor = "red";
+        	}
+            if (input.value !== ""){
+        		input.style.borderColor = 'rgb(129, 129, 129)';
+        		$('.product-registration-button').attr('disabled', false);
+        		clickable.addEventListener('click', hideMessage);
+            }
+            };
+         	
+        	if (input.value == ""){
+        		input.style.borderColor = "red";
+        		$('.product-registration-button').attr('disabled', true);
+        	}
+            if (input.value !== ""){
+        		input.style.borderColor = 'rgb(129, 129, 129)';
+        		$('.product-registration-button').attr('disabled', false);
+        		clickable.addEventListener('click', hideMessage);
+            }
+        });
 }
 
 function goToNextMonth (e) {
@@ -172,11 +243,32 @@ function goToPrevMonth (e) {
 
 function populateDates (e) {
 	days_element.innerHTML = '';
-	let amount_days = 31;
 
-	if (month == 1) {
-		amount_days = 28;
+	if (month % 2 == 0 ){ 
+	    if (month == 8 || month == 10) {
+            var amount_days = 30;
+	    } else {
+	    	var amount_days = 31;
+	    }
+		
+	} else {
+		if (month == 1) {
+			if(year % 4 == 0){
+                 var amount_days = 29;
+			} else {
+				 var amount_days = 28;
+			}
+		   
+	    } 
+	    else if (month == 7 || month == 9 || month == 11){
+	    var amount_days = 31;
+	    } else {
+	    	var amount_days = 30;
+	    }
 	}
+	
+
+	
 
 	for (let i = 0; i < amount_days; i++) {
 		const day_element = document.createElement('div');
@@ -205,6 +297,7 @@ function populateDates (e) {
 
 
 	}
+
 }
 
 // HELPER FUNCTIONS

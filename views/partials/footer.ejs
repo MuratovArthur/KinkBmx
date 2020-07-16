@@ -161,8 +161,8 @@ $(document).ready(function(){
 });
 
 $(document).ready(function() { 
-                
-                   if (window.matchMedia("(min-width: 700px)").matches) {
+                window.addEventListener("resize",function(){
+                  if (window.matchMedia("(min-width: 700px)").matches) {
                     $(".ul1").show();
                     $(".ul2").show();
                     $(".ul3").show();
@@ -173,6 +173,8 @@ $(document).ready(function() {
                     $(".ul3").hide();
                   }
                 }); 
+              });
+                   
          
 
 </script>

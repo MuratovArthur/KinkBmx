@@ -1,3 +1,24 @@
+.success{
+        width: 100%;
+        color: #56ad6a;
+        background: #ecfef0;
+        font-family: 'Exo 2', sans-serif;
+        margin: 3% auto; 
+        border: 2px solid #56ad6a;
+    }
+ .errors{
+        width: 100%;
+        color: #d02e2e;
+        background: #fff6f6;
+        font-family: 'Exo 2', sans-serif;
+        margin: 3% auto;
+        border: 2px solid #d02e2e;
+        display: none;
+    }
+    .ul-register{
+        margin: 1%;
+        padding-left: 5%;
+    }
 .product-registration-page-header{
     width: 100%;
     text-align: center;
@@ -31,7 +52,6 @@
 }
 .product-registration-page-content-p{
     margin-left: 10%; 
-    font-size: 13px;
     margin-bottom: 0; 
 }
 .product-registration-page-content-hr{
@@ -40,6 +60,7 @@
     border-top: 1px solid #313131;
 }
 .product-registration-page-content-h6{
+  font-size: 20px;
     color: #daaa00;
     text-transform: uppercase;
     margin-bottom: 2%; 
@@ -68,11 +89,9 @@
 }
 .product-registration-page-content-col-md-6{
     margin: 10px 0;
-    padding: 0;
 } 
 .product-registration-page-content-col-md-12{
      margin-bottom: 20px;
-     padding: 0;
 }
 .product-registration-page-content-textarea{
     width: 100%;
@@ -97,7 +116,7 @@ margin-top: 10px;
 }
 
 .product-registration-page-content-p{
- font-size: 14px;
+ font-size: 17px;
  margin: 40px 0;
 }
 
@@ -129,6 +148,7 @@ margin-top: 10px;
 .product-registration-page-content-h2{
   font-family: 'Exo 2', sans-serif;
   font-weight: 100;
+
 }
 
 .input-file{ width:.1px;height:.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1}
@@ -139,7 +159,7 @@ margin-top: 10px;
 
 
 
-@media only screen and (min-width: 700px;){
+@media only screen and (min-width: 700px){
 .product-registration-page-content {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -155,11 +175,10 @@ margin-top: 10px;
      font-size: 16px;
 }
 .product-registration-page-content-h6{
-    font-size: 18px;
+    font-size: 16px;
 }
 .product-registration-page-content-col-md-12{
     margin: 10px 0;
-    padding: 0px;
 }
 .product-registration-page-content-p{
  font-size: 16px;
@@ -168,24 +187,32 @@ margin-top: 10px;
 height: 80px;
 
 }
-.row-textarea{
-  margin-bottom: 60px; 
-}
+
 }
 
-@media only screen and (max-width: 699px;){
+@media only screen and (max-width: 699px){
+  .product-registration-page-content-textarea{
+   height: 80px;
+}
+  .product-registration-page-content-h2{
+  font-size: 20px;
+  
+}
+  .product-registration-page-content-h6{
+    font-size: 14px;
+}
+.product-registration-page-content-p{
+     font-size: 14px;
+}
 .product-registration-page-content-col-md-6{
     margin: 2% 0;
-    padding: 0;
     height: 30px;
-}
-.col-md-6{
-      padding-left: 0px;
+    padding: 0;
 }
 .product-registration-page-content-col-md-12{
     margin: 2% 0;
-    padding: 0;
     height: 30px;
+     padding: 0;
 }
 .product-registration-page-content-input{
     font-size: 14px;
@@ -213,6 +240,9 @@ span.product-registration-button-text{
   padding: 0;
   position: relative;
   bottom: 20%;
+}
+.row-textarea{
+  margin-bottom: 60px; 
 }
 }
 

@@ -72,7 +72,7 @@
 	
 	 <div class="errors" >
             <ul class="ul-register">
-                <li>Please enter all of first four fields with "*"</li>
+                <li>Please enter all of fields with "*"</li>
             </ul>
      </div>
      
@@ -319,8 +319,27 @@ function populateDates (e) {
 	days_element.innerHTML = '';
 	let amount_days = 31;
 
-	if (month == 1) {
-		amount_days = 28;
+	if (month % 2 == 0 ){ 
+	    if (month == 8 || month == 10) {
+            var amount_days = 30;
+	    } else {
+	    	var amount_days = 31;
+	    }
+		
+	} else {
+		if (month == 1) {
+			if(year % 4 == 0){
+                 var amount_days = 29;
+			} else {
+				 var amount_days = 28;
+			}
+		   
+	    } 
+	    else if (month == 7 || month == 9 || month == 11){
+	    var amount_days = 31;
+	    } else {
+	    	var amount_days = 30;
+	    }
 	}
 
 	for (let i = 0; i < amount_days; i++) {

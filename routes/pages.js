@@ -7,6 +7,7 @@ const path = require('path');
 var Return  = require("../models/return");
 var Warranty  = require("../models/warranty");
 var Contact  = require("../models/contact");
+var Product  = require("../models/product");
 
 var storage= multer.diskStorage({
   destination:"./public/uploads/",
@@ -152,6 +153,24 @@ router.post("/warranty", upload.fields([{
 
 router.get("/product-registration", function(req,res) {
    res.render("product-registration");
+});
+
+router.post("/product-registration", function(req, res){
+  const  {firstName, lastName, streetAdress, city, state, zip, country, email, product, color, bikeShop} = req.body.product;
+  if ( !firstName || !lastName || !streetAdress || !city || !state || !zip || !country || !email || !product || !color || !bikeShop) {
+    req.flash('error', 'Please enter all of the fields with "*"');
+    return res.redirect('/pages/product-registration#flash');
+  }  else{
+    Product.create(req.body.product, function(err, newProduct){
+      if(err){
+          console.log(err);
+      }else{
+        console.log(req.body.product);
+        req.flash('success', "Thank you! The form was submitted successfully.");
+        return res.redirect('/pages/product-registration#flash');
+      }
+    });
+  } 
 });
 
 router.get("/contact", function(req,res) {
