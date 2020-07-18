@@ -60,7 +60,9 @@ var blogRoutes       = require("./routes/blogs"),
     collectionRoutes = require("./routes/collections"),
     indexRoutes      = require("./routes/index"),
     pageRoutes       = require("./routes/pages"),
-    paymentRoutes    = require("./routes/payment");  
+    paymentRoutes    = require("./routes/payment"); 
+   
+
  
 
 mongoose.connect("mongodb://localhost/kinkbmx", { useNewUrlParser: true, useUnifiedTopology: true });
@@ -126,6 +128,8 @@ app.use("/collections", collectionRoutes);
 app.use("/blogs", blogRoutes);
 app.use("/pages", pageRoutes);
 app.use("/payment",  paymentRoutes);
+
+
 
 const PORT = process.env.SERVER_PORT || 3000;
 app.listen(PORT, () =>

@@ -38,6 +38,20 @@ var express = require("express"),
     User            = require("../models/user");
 
 
+router.get("/bikes/new", function(req, res){
+    res.render("bikeNew");
+});
+router.post("/bikes", function(req, res){
+   Bike.create(req.body.bike, function(err, newBike){
+      if(err){
+          console.log(err);
+      }else{
+         res.redirect("/collections/bikes");
+      }
+    });
+});
+
+
 router.get("/", function(req,res) {
    res.render("collections");
 });

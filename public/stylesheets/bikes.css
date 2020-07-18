@@ -190,8 +190,8 @@ height: 46px;
     max-height: 46px;
 }
 h5.card-title {
-float: right;
-    margin-right: -17px;
+    float: right;
+    margin-right: -17.5px;
     margin-top: -18px;
     color: #fff;
     font-size: 14.5px;
@@ -201,6 +201,13 @@ float: right;
 div.col.mb-4 {
 	padding: 0 0.9%;
 } 
+
+
+
+	div#filter {
+display: none;
+
+	}
 @media screen and (max-width: 768px) { 
 
 	.accordion {

@@ -1,0 +1,40 @@
+<%- include("partials/header") %>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/new.css">
+<header class="bikeNew-page-header">
+  <h1 class="bikeNew-page-title">New Bike</h1>
+</header>
+
+
+
+<form class="form-new" action="/collections/bikes" method="POST" >
+<ul>
+<li>
+    <input type="text" name="bike[name]" class="field-style field-split align-left" placeholder="Name" />
+    <input  name="bike[cost]" class="field-style field-split align-right" placeholder="Cost $" />
+
+</li>
+<li>
+    <input type="url" name="bike[images][0]" class="field-style field-split align-right" placeholder="Image" />
+
+    <input  name="field3" class="field-style field-split align-left" placeholder=" ModelYear" />
+</li>
+<li>
+<input type="text" name="field3" class="field-style field-full align-none" placeholder="Frame" />
+</li>
+<li>
+<textarea name="field5" class="field-style" placeholder="Description"></textarea>
+</li>
+<li>
+
+  
+  <button class="new-submit-button" type="submit"><p class="new-submit-button-text">Submit</p></button>
+
+</li>
+</ul>
+</form>
+
+
+
+
+<%- include("partials/footer") %>
