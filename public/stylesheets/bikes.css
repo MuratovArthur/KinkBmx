@@ -230,10 +230,18 @@ div#bikes-filter.bikes-sidebar.nav-active {
 transform: translate(0%);
 }
 
-.filter-exit {
-      padding: 20px 15px;
-  content: '\f00d';
-font-family: fontAwesome ;
+div.filter-exit {
+    padding: 20px 15px;
+  
+}
+.x.icon {
+  margin-left: 164px;
+
+
+}
+.accordion1 {
+    padding: 0 15px 15px;
+
 }
 .bikes-sidebar   {
 
@@ -241,6 +249,7 @@ font-family: fontAwesome ;
         display: block;
     position: fixed;
     top: 0px;
+        overflow-y: scroll;
     background-color: #000;
     flex-direction: column;
     align-items: center;
@@ -256,39 +265,18 @@ font-family: fontAwesome ;
     z-index: 30;
 
 }
-.x.icon {
-  display: inline;
-      margin-left: 170px;
-}
-}
+
 .filter-title {
   display: inline;
-
-    
     font-weight: 700;
     letter-spacing: 0em;
     line-height: 1.2;
     font-family: 'Exo 2', sans-serif;
 
 }
-hr.bikes-filter-hr {
- background-color:  #4d4d4d;
-}
+
 	.accordion {
    display: none;
-}
-
-.accordion1 {
-  padding: 0 15px 15px;
-}
-
-.accordion-header {
-
-    font-size: 14px;
-
-    font-weight: 300;
-
-}
 }
 div.row.row-cols-1.row-cols-md-3 {
 
