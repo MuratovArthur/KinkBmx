@@ -100,14 +100,14 @@ router.post("/returns", function(req, res){
    const  { order, firstName, secondName, streetAdress, city, state, zip, country, email, phoneNumber, item} = req.body.return;
   if ( !order || !firstName || !secondName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !item) {
     req.flash('error', 'Please enter all of the fields with "*"');
-    return res.redirect('/pages/returns#error');
+    return res.redirect('/pages/returns#flash');
   } else{
     Return.create(req.body.return, function(err, newReturn){
       if(err){
           console.log(err);
       }else{
         req.flash('success', 'Thank you! The form was submitted successfully.');
-        return res.redirect('/pages/returns#error');
+        return res.redirect('/pages/returns#flash');
       }
     });
   } 
@@ -147,7 +147,7 @@ router.post("/warranty", PhotoUpload, function(req, res){
    
   if ( !firstName || !lastName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !product || !bikeShop || !assembledBy ) {
     req.flash('error', 'Please enter all of the fields with "*"');
-    return res.redirect('/pages/warranty#error');
+    return res.redirect('/pages/warranty#flash');
   } else{
     Warranty.create(newWarranry, function(err, newWarranry){
       if(err){
@@ -155,7 +155,7 @@ router.post("/warranty", PhotoUpload, function(req, res){
       }else{
          console.log(newWarranry);
          req.flash('success', 'Thank you! The form was submitted successfully.');
-         return res.redirect('/pages/warranty#error');
+         return res.redirect('/pages/warranty#flash');
       }
     });
   } 
