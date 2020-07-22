@@ -94,6 +94,34 @@
 </footer>
 
 <script type="text/javascript">
+  
+   const sideSlide = ()=> {
+    const filter = document.querySelector('.filter');
+    const close = document.querySelector('.x.icon');
+
+    const side =  document.querySelector('.bikes-sidebar ');
+   
+    close.addEventListener('click', ()=> { 
+
+        side.classList.toggle('nav-active');
+
+    });
+    
+  
+    filter.addEventListener('click', ()=> {
+
+          //toggle Nav
+        side.classList.toggle('nav-active');
+    });
+ }
+   
+  
+
+
+sideSlide();
+</script>
+
+<script type="text/javascript">
 	
 	var accordion = (function(){
   

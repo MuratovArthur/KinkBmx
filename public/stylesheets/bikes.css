@@ -208,7 +208,72 @@ div.col.mb-4 {
 display: none;
 
 	}
+
+
+
+
+div#bikes-filter.bikes-sidebar {
+display: none;
+}
+div#bikes-filter.bikes-sidebar.nav-active{ 
+display: block;
+}
+
+
+
+
+
+
 @media screen and (max-width: 768px) { 
+
+div#bikes-filter.bikes-sidebar.nav-active {
+transform: translate(0%);
+}
+
+div.filter-exit {
+    padding: 20px 15px;
+  
+}
+.x.icon {
+  margin-left: 164px;
+
+
+}
+.accordion1 {
+    padding: 0 15px 15px;
+
+}
+.bikes-sidebar   {
+
+
+        display: block;
+    position: fixed;
+    top: 0px;
+        overflow-y: scroll;
+    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    max-width: 95%;
+    height: 100%;
+    transform: translate(-105%);
+    transition: transform 0.3s ease-in;
+    
+    margin: 0;
+    color: #fff;
+    margin-bottom: 5%;
+    z-index: 30;
+
+}
+
+.filter-title {
+  display: inline;
+    font-weight: 700;
+    letter-spacing: 0em;
+    line-height: 1.2;
+    font-family: 'Exo 2', sans-serif;
+
+}
 
 	.accordion {
    display: none;
@@ -229,8 +294,9 @@ h5.count-of-products {
     display: block;
     margin-top: 26px;
     text-align: center;
-    margin-left: 22%;
-    width: 50%;
+    margin-left: 15%;
+    width: 53%;
+
 
 
 
@@ -277,3 +343,13 @@ font-size: 26.7px;
 
 }
 
+@keyframes navLinkFade {
+from {
+ opacity: 0;
+ transform: translateX(50px);
+}
+to {
+opacity: 1;
+transform: translateX(0px);
+
+}
