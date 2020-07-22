@@ -117,11 +117,17 @@ router.get("/warranty", function(req,res) {
    res.render("warranty");
 });
 
-router.post("/warranty", upload.fields([{
+var PhotoUpload = upload.fields([{
            name: 'purchasePhoto', maxCount: 1
          }, {
            name: 'defectPhoto', maxCount: 1
-         }]),  function(req, res){
+         }], function(err){
+          if (err instanceof multer.MulterError) {
+             console.log('====================');
+          }
+         });
+
+router.post("/warranty", PhotoUpload, function(req, res){
     const  { firstName, lastName, streetAdress, city, state, zip, country, email, phoneNumber, product, bikeShop, assembledBy, issue} = req.body.warranty;
 
   if (typeof req.files.purchasePhoto === 'undefined') {
