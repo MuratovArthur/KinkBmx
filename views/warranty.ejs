@@ -70,11 +70,21 @@
 	</ul>
 	<hr class="warranty-page-content-hr" id="flash">
 	
+
+
 	 <div class="errors" >
             <ul class="ul-register">
                 <li>Please enter all of fields with "*"</li>
             </ul>
      </div>
+
+<% if(error && error.length > 0) { %>
+      <div class="errors" >
+            <ul class="ul-register">
+                <li><%= error %> </li>
+            </ul>
+     </div>
+     <% } %>
      
       <% if(success && success.length > 0) { %>
          <div class="success">
@@ -89,62 +99,62 @@
 	<h6 class="warranty-page-content-h6">Rider Info</h6>
 	<div class="row">
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[firstName]" placeholder="First Name*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="text" name="firstName" placeholder="First Name*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[lastName]" placeholder="Last Name*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="lastName" placeholder="Last Name*">
 		</div>
 		<div class="col-md-12 warranty-page-content-col-md-12">
-			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[streetAdress]" placeholder="Street Adress*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="streetAdress" placeholder="Street Adress*">
 		</div>
 		<div class="col-md-12 warranty-page-content-col-md-12">
-			<input class="warranty-page-content-input" type="" name="warranty[streetAdressLine]" placeholder="Street Adress Line 2">
+			<input class="warranty-page-content-input" type="" name="streetAdressLine" placeholder="Street Adress Line 2">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input warranty-page-content-input-main" name="warranty[city]" placeholder="City*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" name="city" placeholder="City*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[state]" placeholder="State/Province*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="state" placeholder="State/Province*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[zip]" placeholder="ZIP/Postal code*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="zip" placeholder="ZIP/Postal code*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[country]" placeholder="Country*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="country" placeholder="Country*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[email]" placeholder="Email*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="email" placeholder="Email*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[phoneNumber]" placeholder="Phone Number*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="phoneNumber" placeholder="Phone Number*">
 		</div>
 	</div>
 		<h6 class="warranty-page-content-h6">Product Details</h6>
 	<div class="row">
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input warranty-page-content-input-main" name="warranty[product]" placeholder="Product (Ex. Titan II Frame)*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" name="product" placeholder="Product (Ex. Titan II Frame)*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="warranty[color]" placeholder="Color (Ex. Black)">
+			<input class="warranty-page-content-input" type="" name="color" placeholder="Color (Ex. Black)">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="warranty[size]" placeholder="Size (Ex. 20.5in / 175mm)">
+			<input class="warranty-page-content-input" type="" name="size" placeholder="Size (Ex. 20.5in / 175mm)">
 		</div>
 		<div class="col-md-12 warranty-page-content-col-md-12">
-			<input class="warranty-page-content-input" type="" name="warranty[serialNumber]" placeholder="Serial number or date code (bikes, frames, forks, bars, cranks only)">
+			<input class="warranty-page-content-input" type="" name="serialNumber" placeholder="Serial number or date code (bikes, frames, forks, bars, cranks only)">
 		</div>
 	</div>
 	<h6 class="warranty-page-content-h6">PURCHASE & ASSEMBLY DETAILS</h6>
 	<div class="row">
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input warranty-page-content-input-main" name="warranty[bikeShop]" placeholder="Bike Shop or online retailer*">
+			<input class="warranty-page-content-input warranty-page-content-input-main" name="bikeShop" placeholder="Bike Shop or online retailer*">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
-			<input class="warranty-page-content-input" type="" name="warranty[modelYear]" placeholder="Model year (Ex.2015)">
+			<input class="warranty-page-content-input" type="" name="modelYear" placeholder="Model year (Ex.2015)">
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-6">
 			<div class="date-picker">
-			<input class="warranty-page-content-input selected-date " name="warranty[purchaseDate]" placeholder="Date (dd/mm/yyyy)*" disabled>
+			<input class="warranty-page-content-input selected-date " name="purchaseDate" placeholder="Date (dd/mm/yyyy)*" disabled>
 			    <div class="dates">
 
 			    <div class="month">
@@ -159,13 +169,13 @@
 		    </div>
 		</div>
 		<div class="col-md-6 warranty-page-content-col-md-12">
-			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="warranty[assembledBy]" placeholder="Assembled by myself/ bike shop">
+			<input class="warranty-page-content-input warranty-page-content-input-main" type="" name="assembledBy" placeholder="Assembled by myself/ bike shop">
 		</div>
 	</div>
 	<h6 class="warranty-page-content-h6">PRODUCT ISSUE/DEFECT INFORMATION</h6>
 	<div class="row row-textarea">
 		<div class="col-md-12 warranty-page-content-col-md-12">
-			<textarea class="warranty-page-content-textarea warranty-page-content-input-main" name="warranty[issue]"></textarea>
+			<textarea class="warranty-page-content-textarea warranty-page-content-input-main" name="issue"></textarea>
 		</div>
 	</div>
 	<h6 class="warranty-page-content-h6">UPLOAD PROOF OF PURCHASE OR RECEIPT (SCAN OR MOBILE PHOTO)</h6>
@@ -180,9 +190,9 @@
 	<h6 class="warranty-page-content-h6">UPLOAD PRODUCT IMAGES, INCLUDING IMAGES OF DEFECTS</h6>
 	<div class="form-group">
   	
-    <input type="file" name="defectPhoto" id="fileTwo" class="input-file">
+    <input type="file" name="defectPhoto" id="fileTwo" class="input-file" multiple>
     <label for="fileTwo" class="btn label-upload">
-      <span class="warranty-button-text warranty-button-text-upload-two">Upload file</span>
+      <span class="warranty-button-text warranty-button-text-upload-two">Upload files</span>
     </label>
     
 

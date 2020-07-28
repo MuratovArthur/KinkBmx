@@ -8,18 +8,26 @@ var Return  = require("../models/return");
 var Warranty  = require("../models/warranty");
 var Contact  = require("../models/contact");
 var Product  = require("../models/product");
+var  bodyParser      = require("body-parser");
 
-var storage= multer.diskStorage({
+var urlencodedParser = bodyParser.urlencoded({extended: false});
+
+var storage = multer.diskStorage({
   destination:"./public/uploads/",
   filename:(req,file,cb)=>{
-    cb(null,file.fieldname+"_"+Date.now()+path.extname(file.originalname));
+    cb(null,file.fieldname+"-"+Date.now()+path.extname(file.originalname));
   }
 });
 
-const upload = multer({
+var upload = multer({
   storage: storage,
   limits:{fileSize: 10000000}
-});
+}).fields([{
+           name: 'purchasePhoto', maxCount: 1
+         }, {
+           name: 'defectPhoto', maxCount: 1
+         }]);
+  
 
 
 
@@ -117,18 +125,20 @@ router.get("/warranty", function(req,res) {
    res.render("warranty");
 });
 
-var PhotoUpload = upload.fields([{
-           name: 'purchasePhoto', maxCount: 1
-         }, {
-           name: 'defectPhoto', maxCount: 1
-         }], function(err){
-          if (err instanceof multer.MulterError) {
-             console.log('====================');
-          }
-         });
 
-router.post("/warranty", PhotoUpload, function(req, res){
-    const  { firstName, lastName, streetAdress, city, state, zip, country, email, phoneNumber, product, bikeShop, assembledBy, issue} = req.body.warranty;
+router.post("/warranty", urlencodedParser, function(req, res){
+  console.log(req.body);
+
+  upload(req, res, function (err) {
+    if (err instanceof multer.MulterError) {
+      req.flash('error', 'Multer Error');
+      return res.redirect('/pages/warranty#flash');
+    } else if (err) {
+      console.log('error');
+    }
+  });
+
+  const  { firstName, lastName, streetAdress, city, state, zip, country, email, phoneNumber, product, bikeShop, assembledBy, issue} = req.body;
 
   if (typeof req.files.purchasePhoto === 'undefined') {
     var  purchasePhoto  = '';
