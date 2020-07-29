@@ -22,11 +22,7 @@ var storage = multer.diskStorage({
 var upload = multer({
   storage: storage,
   limits:{fileSize: 10000000}
-}).fields([{
-           name: 'purchasePhoto', maxCount: 1
-         }, {
-           name: 'defectPhoto', maxCount: 1
-         }]);
+}).array('purchasePhoto', 10);
   
 
 
@@ -127,7 +123,8 @@ router.get("/warranty", function(req,res) {
 
 
 router.post("/warranty", urlencodedParser, function(req, res){
-  console.log(req.body);
+
+ const  { firstName, lastName, streetAdress, city, state, zip, country, email, phoneNumber, product, bikeShop, assembledBy, issue} = req.body.warranty;
 
   upload(req, res, function (err) {
     if (err instanceof multer.MulterError) {
@@ -138,22 +135,16 @@ router.post("/warranty", urlencodedParser, function(req, res){
     }
   });
 
-  const  { firstName, lastName, streetAdress, city, state, zip, country, email, phoneNumber, product, bikeShop, assembledBy, issue} = req.body;
+
 
   if (typeof req.files.purchasePhoto === 'undefined') {
     var  purchasePhoto  = '';
   } else {
     var  purchasePhoto  = req.files.purchasePhoto[0].filename;
   }
- 
-  if (typeof req.files.defectPhoto === 'undefined') {
-    var  defectPhoto  = '';
-  } else {
-    var  defectPhoto  = req.files.defectPhoto[0].filename;
-  }
     
 
-   var newWarranry = { purchasePhoto: purchasePhoto, defectPhoto: defectPhoto, firstName: firstName, lastName: lastName, streetAdress: streetAdress, city: city, state: state, zip: zip, country: country, email: email, phoneNumber: phoneNumber, product: product, bikeShop: bikeShop, assembledBy: assembledBy, issue: issue};
+   var newWarranry = { purchasePhoto: purchasePhoto, firstName: firstName, lastName: lastName, streetAdress: streetAdress, city: city, state: state, zip: zip, country: country, email: email, phoneNumber: phoneNumber, product: product, bikeShop: bikeShop, assembledBy: assembledBy, issue: issue};
    
   if ( !firstName || !lastName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !product || !bikeShop || !assembledBy ) {
     req.flash('error', 'Please enter all of the fields with "*"');
