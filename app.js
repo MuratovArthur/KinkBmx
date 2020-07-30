@@ -62,13 +62,10 @@ var blogRoutes       = require("./routes/blogs"),
     pageRoutes       = require("./routes/pages"),
     paymentRoutes    = require("./routes/payment"); 
    
-var multer = require('multer');
-var upload = multer();
-app.use(upload.array()); 
  
 
 mongoose.connect("mongodb://localhost/kinkbmx", { useNewUrlParser: true, useUnifiedTopology: true });
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));

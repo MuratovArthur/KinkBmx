@@ -2,27 +2,24 @@ var express = require("express");
 var router  = express.Router();
 var fs = require('fs');
 var formidable = require('formidable');
-const multer = require('multer');
-const path = require('path');
+var multer = require('multer');
+var path = require('path');
 var Return  = require("../models/return");
 var Warranty  = require("../models/warranty");
 var Contact  = require("../models/contact");
 var Product  = require("../models/product");
-var  bodyParser      = require("body-parser");
 
-var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 var storage = multer.diskStorage({
-  destination:"./public/uploads/",
+  destination: function (req, file, cb) {
+    cb(null, './public/uploads/')
+  },
   filename:(req,file,cb)=>{
     cb(null,file.fieldname+"-"+Date.now()+path.extname(file.originalname));
   }
 });
 
-var upload = multer({
-  storage: storage,
-  limits:{fileSize: 10000000}
-}).array('purchasePhoto', 10);
+var upload = multer({ storage: storage }).fields([{ name: 'purchasePhoto', maxCount: 1 }, { name: 'deffectPhoto', maxCount: 5 }]);
   
 
 
@@ -122,44 +119,101 @@ router.get("/warranty", function(req,res) {
 });
 
 
-router.post("/warranty", urlencodedParser, function(req, res){
+router.post("/warranty", function(req, res, next){
 
- const  { firstName, lastName, streetAdress, city, state, zip, country, email, phoneNumber, product, bikeShop, assembledBy, issue} = req.body.warranty;
-
-  upload(req, res, function (err) {
+upload(req, res, function (err) {
     if (err instanceof multer.MulterError) {
-      req.flash('error', 'Multer Error');
+      console.log(err);
+      req.flash('error', 'Please upload no more than 6 files in total');
       return res.redirect('/pages/warranty#flash');
     } else if (err) {
-      console.log('error');
-    }
-  });
+      console.log(err);
+    } else {
 
+console.log(req.files);
+console.log(req.body);
 
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    var streetAdress = req.body.streetAdress;
+    var city = req.body.city;
+    var state = req.body.state;
+    var zip = req.body.zip;
+    var country = req.body.country;
+    var phoneNumber = req.body.phoneNumber;
+    var product = req.body.product;
+    var bikeShop = req.body.bikeShop;
+    var assembledBy = req.body.assembledBy;
+    var issue = req.body.issue;
+    var email = req.body.email;
 
-  if (typeof req.files.purchasePhoto === 'undefined') {
-    var  purchasePhoto  = '';
-  } else {
-    var  purchasePhoto  = req.files.purchasePhoto[0].filename;
-  }
-    
+        if (req.files === undefined){
+          var purchasePhoto = "";
+          var deffectPhoto1 = '';
+          var deffectPhoto2 = '';
+          var deffectPhoto3 = '';
+          var deffectPhoto4 = '';
+          var deffectPhoto5 = '';
+        } else {
 
-   var newWarranry = { purchasePhoto: purchasePhoto, firstName: firstName, lastName: lastName, streetAdress: streetAdress, city: city, state: state, zip: zip, country: country, email: email, phoneNumber: phoneNumber, product: product, bikeShop: bikeShop, assembledBy: assembledBy, issue: issue};
-   
-  if ( !firstName || !lastName || !streetAdress || !city || !state || !zip || !country || !email || !phoneNumber || !product || !bikeShop || !assembledBy ) {
-    req.flash('error', 'Please enter all of the fields with "*"');
-    return res.redirect('/pages/warranty#flash');
-  } else{
-    Warranty.create(newWarranry, function(err, newWarranry){
-      if(err){
+          if (req.files.purchasePhoto === undefined) {
+            var purchasePhoto = "";
+          } else {
+            if (req.files.purchasePhoto[0] === undefined) {
+              var purchasePhoto = "";
+            } else {
+               var purchasePhoto = req.files.purchasePhoto[0].filename;
+            }
+          }
+
+          
+
+          if (req.files.deffectPhoto === undefined) {
+            var deffectPhoto1 = "";
+            var deffectPhoto2 = "";
+          } else {
+            if (req.files.deffectPhoto[0] === undefined) {
+              var deffectPhoto1 = "";
+            } else {
+               var deffectPhoto1 = req.files.deffectPhoto[0].filename;
+            }
+            if (req.files.deffectPhoto[1] === undefined) {
+               var deffectPhoto2 = "";
+            } else {
+                var deffectPhoto2 = req.files.deffectPhoto[1].filename;
+            }
+            if (req.files.deffectPhoto[2] === undefined) {
+               var deffectPhoto3 = "";
+            } else {
+                var deffectPhoto3 = req.files.deffectPhoto[2].filename;
+            }
+            if (req.files.deffectPhoto[3] === undefined) {
+               var deffectPhoto4 = "";
+            } else {
+                var deffectPhoto4 = req.files.deffectPhoto[3].filename;
+            }
+            if (req.files.deffectPhoto[4] === undefined) {
+               var deffectPhoto5 = "";
+            } else {
+                var deffectPhoto5 = req.files.deffectPhoto[4].filename;
+            }
+          }
+
+        }
+
+      var newWarranry = { purchasePhoto: purchasePhoto, deffectPhoto1: deffectPhoto1, deffectPhoto2: deffectPhoto2, deffectPhoto3: deffectPhoto3, deffectPhoto4: deffectPhoto4, deffectPhoto5: deffectPhoto5, firstName: firstName, lastName: lastName, streetAdress: streetAdress, city: city, state: state, zip: zip, country: country, email: email, phoneNumber: phoneNumber, product: product, bikeShop: bikeShop, assembledBy: assembledBy, issue: issue};
+
+        Warranty.create(newWarranry, function(err, newWarranry){
+        if(err){
           console.log(err);
-      }else{
+        } else{
          console.log(newWarranry);
          req.flash('success', 'Thank you! The form was submitted successfully.');
          return res.redirect('/pages/warranty#flash');
       }
-    });
-  } 
+    });   
+}});
+
 });
 
 router.get("/product-registration", function(req,res) {

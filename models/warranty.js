@@ -20,7 +20,12 @@ var WarrantySchema = new mongoose.Schema({
     purchaseDate: String,
     assembledBy: String,
     issue: String,
-    purchasePhoto: [String] 
+    purchasePhoto: String,
+    deffectPhoto1: String,
+    deffectPhoto2: String,
+    deffectPhoto3: String,
+    deffectPhoto4: String,
+    deffectPhoto5: String
 });
 
 module.exports = mongoose.model("Warranty", WarrantySchema);
