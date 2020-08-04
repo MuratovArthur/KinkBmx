@@ -174,13 +174,21 @@ h5.count-of-products {
 
 
 }
+#sort.ui.dropdown option  { 
+   font-size: 20px;
+    left: 13px;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1px;
+}
+
+
 #sort.ui.dropdown {
-height: 46px;
+    height: 46px;
     padding: 1px 28px 12px 10px;
     border: 1px solid #fff;
     visibility: visible;
     top: 1px;
-    font-size: 27px;
+     font-size: 27px;
     left: 13px;
     font-family: 'Teko', sans-serif;
     letter-spacing: 1px;
@@ -229,7 +237,21 @@ display: block;
 div#bikes-filter.bikes-sidebar.nav-active {
 transform: translate(0%);
 }
-
+#sort.ui.dropdown {
+    height: 46px;
+    padding: 1px 28px 12px 10px;
+    border: 1px solid #fff;
+    visibility: visible;
+    top: 1px;
+     font-size: 27px;
+    left: 13px;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1px;
+    float: right;
+    display: inline;
+    font-weight: 300;
+    max-height: 46px;
+}
 div.filter-exit {
     padding: 20px 15px;
   
@@ -325,6 +347,10 @@ display: block;
     letter-spacing: 1px;
 
 	}
+  div#filter:hover { 
+ cursor: pointer;
+  }
+
 	div#filter h5 { 
 font-size: 26.7px;
     font-family: 'Teko', sans-serif;

@@ -95,30 +95,32 @@
 
 <script type="text/javascript">
   
-   const sideSlide = ()=> {
-    const filter = document.querySelector('.filter');
-    const close = document.querySelector('.x.icon');
-
-    const side =  document.querySelector('.bikes-sidebar ');
    
-    close.addEventListener('click', ()=> { 
 
-        side.classList.toggle('nav-active');
-
-    });
+ const navSlide = ()=> {
+    const burger = document.querySelector('.burger');
+    const nav =  document.querySelector('.sidebar ');
+   
     
   
-    filter.addEventListener('click', ()=> {
+    burger.addEventListener('click', ()=> {
 
           //toggle Nav
-        side.classList.toggle('nav-active');
+        nav.classList.toggle('nav-active');
+
+
+
+   
+     //Burger animation 
+     burger.classList.toggle('toggle');
     });
  }
    
   
 
 
-sideSlide();
+navSlide();
+
 </script>
 
 <script type="text/javascript">
@@ -206,30 +208,8 @@ $(document).ready(function() {
          
 
 </script>
-<script type="text/javascript">
- const navSlide = ()=> {
-    const burger = document.querySelector('.burger');
-    const nav =  document.querySelector('.sidebar ');
-   
-    
-  
-    burger.addEventListener('click', ()=> {
 
-          //toggle Nav
-        nav.classList.toggle('nav-active');
-
-
-
-   
-     //Burger animation 
-     burger.classList.toggle('toggle');
-    });
- }
-   
-  
-
-
-navSlide();
+<script type="text/javascript" >
 
 
  function showHide(text) {

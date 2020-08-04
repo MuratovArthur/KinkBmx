@@ -21,13 +21,13 @@
     <div class="accordion-body__contents">
             <div class="checkbox">
                  <input type="checkbox">
-                 <label >2020</label>
+                 <label data-filter=".2020" >2020</label>
 
          </div>
 
            <div class="checkbox">
                  <input type="checkbox">
-                 <label>2021</label>
+                 <label data-filter=".2021">2021</label>
          </div>
     </div>
     
@@ -41,27 +41,27 @@
     <div class="accordion-body__contents">
         <div class="checkbox">
                  <input type="checkbox">
-                 <label>12"</label>
+                 <label data-filter=".12">12"</label>
          </div>
           <div class="checkbox">
                  <input type="checkbox">
-                 <label>14"</label>
+                 <label data-filter=".14">14"</label>
          </div>
           <div class="checkbox">
                  <input type="checkbox">
-                 <label>16"</label>
+                 <label data-filter=".16">16"</label>
          </div>
           <div class="checkbox">
                  <input type="checkbox">
-                 <label>18"</label>
+                 <label data-filter=".18">18"</label>
          </div>
           <div class="checkbox">
                  <input type="checkbox">
-                 <label>20"</label>
+                 <label data-filter=".20">20"</label>
          </div>
           <div class="checkbox">
                  <input type="checkbox">
-                 <label>26"</label>
+                 <label data-filter=".26">26"</label>
          </div>
     </div>
      
@@ -73,23 +73,23 @@
     <div class="accordion-body__contents">
         <div class="checkbox">
                  <input type="checkbox">
-                 <label>20.0"</label>
+                 <label data-filter=".20.0">20.0"</label>
          </div>
          <div class="checkbox">
                  <input type="checkbox">
-                 <label>20.25"</label>
+                 <label  data-filter=".20.25">20.25"</label>
          </div>
          <div class="checkbox">
                  <input type="checkbox">
-                 <label>20.5"</label>
+                 <label  data-filter=".20.5" >20.5"</label>
          </div>
           <div class="checkbox">
                  <input type="checkbox">
-                 <label>20.75"</label>
+                 <label  data-filter=".20.75" >20.75"</label>
          </div>
           <div class="checkbox">
                  <input type="checkbox">
-                 <label>21.0"</label>
+                 <label  data-filter=".21.0">21.0"</label>
          </div>
 
     </div>
@@ -121,12 +121,12 @@
                 <option value=""> Sort</option>
                 <option value=""> Featured</option>
                 <option value="">Best selling</option>
-                <option value=""> Alphabetically, A-Z</option>
+                <option value=""  > Alphabetically, A-Z</option>
                 <option value="">Alphabetically, Z-A</option>
                 <option value="">Price, low to high</option>
                 <option value="">Price, high to low</option>
                 <option value="">Date, old to new</option>
-                <option value="">date, new to old</option>
+                <option value=""  >Date, new to old</option>
 
               </select>
 	<h5 class="count-of-products"> 33 products </h5>
@@ -256,6 +256,32 @@
  
   </div>
 </div>
+
+<script type="text/javascript" > 
+const sideSlide = ()=> {
+    const filter = document.querySelector('.filter');
+    const close = document.querySelector('.x.icon');
+
+    const side =  document.querySelector('.bikes-sidebar ');
+   
+    close.addEventListener('click', ()=> { 
+
+        side.classList.toggle('nav-active');
+
+    });
+    
+  
+    filter.addEventListener('click', ()=> {
+
+          //toggle Nav
+        side.classList.toggle('nav-active');
+    });
+ }
+   
+  
+
+
+sideSlide();</script>
 
 <%- include("partials/footer") %>
 
