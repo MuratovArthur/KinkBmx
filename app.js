@@ -93,7 +93,7 @@ app.use(function(req, res, next){
 });
 
 passport.use(
-    new LocalStrategy({ usernameField: 'email', passReqToCallback : true }, (req, email, password, done) => {
+    new LocalStrategy({ usernameField: 'email', passReqToCallback: true }, (req, email, password, done) => {
       User.findOne({
         email: email
       }).then(user => {

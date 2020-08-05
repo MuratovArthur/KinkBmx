@@ -11,7 +11,6 @@ body{
             }     
     .h1-register {
     	font-family: 'Teko', sans-serif;
-    	font-size: 700;
     	text-align: center; 
     	color: #ffffff;
     	font-size: 2.5em; 
@@ -27,7 +26,7 @@ body{
     	text-align: left;
     	color: #ffffff;
     	font-family: 'Exo 2', sans-serif;
-    	font-size: 0.8em;
+    	font-size: 1.2em;
     	display: block;
     } 
     .row-two{
@@ -44,6 +43,7 @@ body{
          color: #ffffff;
         font-family: 'Exo 2', sans-serif;
         padding-left: 2%;
+        font-size: 1.2rem;
     }
     .input-register:focus{
         border: 1px solid white;
@@ -71,6 +71,7 @@ body{
     }
     .a-register{
     	color: #ffffff;
+        font-size: 1.2rem;
     }
     .a-register:hover{
     	color: #ffffff;
@@ -106,4 +107,21 @@ body{
     .ul-register{
         margin: 2%;
         padding-left: 5%;
+        font-size: 1.2rem;
     }
+
+    @media only screen and (max-width: 1025px){
+.wrapper{
+        padding-top: 120px;
+         min-height: 52%;
+            }  
+
+}
+
+ @media only screen and (max-width: 769px){
+.wrapper{
+        padding: 0px;
+         min-height: 44%;
+            }  
+
+}
