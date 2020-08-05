@@ -1,3 +1,7 @@
+b {
+  font-family: 'Teko', sans-serif;
+}
+
 .success{
         width: 100%;
         color: #56ad6a;
@@ -73,6 +77,8 @@
     text-transform: uppercase;
     margin-bottom: 2%; 
     margin-top: 2%; 
+    font-family: 'Teko', sans-serif;
+    font-size: 18px;
 }
 .warranty-page-content-input{
     width: 100%;
@@ -159,6 +165,9 @@ margin-top: 10px;
 
 
 @media only screen and (min-width: 700px){
+  b {
+  font-size: 28px; 
+}
 .warranty-page-content {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -174,7 +183,7 @@ margin-top: 10px;
      font-size: 16px;
 }
 .warranty-page-content-h6{
-    font-size: 18px;
+    font-size: 22px;
 }
 .warranty-page-content-col-md-12{
     margin: 10px 0;
@@ -183,6 +192,9 @@ margin-top: 10px;
 }
 
 @media only screen and (max-width: 699px){
+   b {
+  font-size: 22px; 
+}
 .warranty-page-content-col-md-6{
     margin: 3% 0;
     padding: 0;
